@@ -25,12 +25,12 @@ export function Footer({ onNavigate, onOpenPrivacy, onOpenTerms }: FooterProps) 
               </div>
               <div>
                 <div className="footer-brand-name">TheSanitasNurse</div>
-                <div className="footer-brand-sub">Home Nursing Care Nigeria</div>
+                <div className="footer-brand-sub">Private Home Nursing · Ibadan, Nigeria</div>
               </div>
             </div>
             <p className="footer-bio">
-              NMCN-certified registered nurses delivering hospital-grade clinical care to homes 
-              across Lagos, Abuja, and major Nigerian cities. 24/7 emergency dispatch available.
+              Licensed Registered Nurse & Midwife (NMCN) delivering dedicated hospital-grade clinical care 
+              to homes across Ibadan, Oyo State (Bodija, Oluyole, Jericho, Ring Road, Akobo & surrounding areas).
             </p>
             <a
               href={`https://wa.me/${AVON_HOME_NURSING_INFO.whatsappNumber}?text=${encodeURIComponent(AVON_HOME_NURSING_INFO.whatsappPrefill)}`}
@@ -39,7 +39,7 @@ export function Footer({ onNavigate, onOpenPrivacy, onOpenTerms }: FooterProps) 
               className="btn btn-sm"
               style={{ background: '#25d366', color: 'white', border: 'none', display: 'inline-flex' }}
             >
-              <MessageSquare size={14} /> WhatsApp Triage
+              <MessageSquare size={14} /> Direct WhatsApp Line
             </a>
           </div>
 

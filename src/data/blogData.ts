@@ -313,7 +313,7 @@ Several factors make Nigerians particularly susceptible to high blood pressure:
 
 **Dietary factors:** The traditional Nigerian diet can be high in sodium (from seasoning cubes, crayfish, stockfish, and added table salt), saturated fat (from palm oil in excess), and processed foods in urban areas.
 
-**Stress:** Economic pressures, traffic stress in cities like Lagos and Abuja, and occupational demands contribute to chronically elevated blood pressure.
+**Stress:** Economic pressures, daily commuting, and occupational demands contribute to chronically elevated blood pressure.
 
 **Physical inactivity:** Sedentary desk jobs, long commutes, and reduced traditional physical labour have increased the risk.
 

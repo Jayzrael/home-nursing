@@ -23,8 +23,8 @@ const faqs = [
     a: 'Yes. For acute or urgent needs (e.g. post-hospital discharge wound breakdown, sudden high blood pressure, or urgent catheter care), call 0708 685 6431 or WhatsApp directly and I will accommodate a same-day visit depending on current location and schedule.',
   },
   {
-    q: 'What locations do you currently cover?',
-    a: 'I primarily serve clients across Lagos (both Island: Ikoyi, Victoria Island, Lekki, Ajah; and Mainland: Ikeja, Surulere, Yaba, Gbagada, Maryland) as well as pre-scheduled private nursing blocks in Abuja FCT.',
+    q: 'What locations in Ibadan do you cover?',
+    a: 'I cover all major areas across Ibadan, Oyo State — including Old & New Bodija, Agodi GRA, Ikolaba, Samonda, UI/UCH axis, Oluyole Estate, Ring Road, Iyaganku GRA, Alalubosa GRA, Jericho GRA, Akobo, and surrounding neighborhoods.',
   },
   {
     q: 'What payment methods do you accept?',

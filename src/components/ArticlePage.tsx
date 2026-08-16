@@ -155,8 +155,8 @@ export function ArticlePage({ slug, onBack, onSelectPost, onOpenBooking }: Artic
                 Need Professional Home Nursing Care?
               </h3>
               <p style={{ opacity: 0.9, marginBottom: '1.25rem', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                Our NMCN-certified nurses are available 24/7 to provide hospital-grade care in the 
-                comfort of your home across Lagos, Abuja, and major Nigerian cities.
+                Book dedicated hospital-grade home nursing in the safety and
+                comfort of your home across Ibadan, Oyo State.
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                 <button className="btn btn-white" onClick={onOpenBooking}>

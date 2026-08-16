@@ -17,11 +17,12 @@ const serviceOptions = [
 ];
 
 const locationOptions = [
-  'In-Home Visit — Lagos Mainland (Surulere, Yaba, Ikeja, Maryland)',
-  'In-Home Visit — Lagos Island (Lekki, Ikoyi, VI, Ajah)',
-  'In-Home Visit — Abuja FCT',
-  'In-Home Visit — Other Nigerian City',
-  'Virtual / Teleconsultation',
+  'In-Home Visit — Bodija & Agodi Axis (Old/New Bodija, Agodi GRA, Ikolaba, Samonda)',
+  'In-Home Visit — Oluyole & Ring Road Hub (Oluyole Estate, Ring Road, Challenge, Liberty)',
+  'In-Home Visit — Jericho & Iyaganku (Jericho GRA, Iyaganku GRA, Alalubosa, Eleyele)',
+  'In-Home Visit — Akobo, UI, Sango & Moniya Axis',
+  'In-Home Visit — Other Ibadan / Oyo State Area',
+  'Virtual / Teleconsultation (Remote Guidance)',
 ];
 
 export function BookingModal({ onClose }: BookingModalProps) {

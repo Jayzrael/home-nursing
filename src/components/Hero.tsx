@@ -3,7 +3,7 @@ import { THESANITAS_NURSE_INFO } from '../data/nursingData';
 
 interface HeroProps {
   onOpenBooking: () => void;
-  onNavigate: (page: string) => void;
+  onNavigate?: (page: string) => void;
 }
 
 const symptoms = [
@@ -25,7 +25,7 @@ export function Hero({ onOpenBooking, onNavigate: _ }: HeroProps) {
           <div>
             <div className="hero-badge">
               <Activity size={13} />
-              Licensed Registered Nurse & Midwife (NMCN) · Direct 1:1 Home Care
+              Licensed Registered Nurse & Midwife (NMCN) · Based in Ibadan, Oyo State
             </div>
 
             <h1 className="hero-headline">
@@ -35,9 +35,9 @@ export function Hero({ onOpenBooking, onNavigate: _ }: HeroProps) {
             </h1>
 
             <p className="hero-lead">
-              I bring hospital-grade clinical nursing directly to your home in Lagos and Abuja.
-              Whether caring for an aging parent, dressing complex wounds, or supporting a new mother,
-              you get <strong>100% direct care continuity</strong> from the same certified nurse every visit.
+              I bring hospital-grade clinical nursing directly to your home in Ibadan (Bodija, Oluyole,
+              Jericho, Ring Road, Akobo & beyond). Whether caring for an aging parent, dressing complex wounds,
+              or supporting a new mother, you get <strong>100% direct care continuity</strong> from the same certified nurse every visit.
               Starting from <strong>₦15,000/visit</strong>.
             </p>
 
@@ -45,7 +45,7 @@ export function Hero({ onOpenBooking, onNavigate: _ }: HeroProps) {
             <div className="hero-symptom-box">
               <div className="hero-symptom-label">
                 <Heart size={13} color="#7a0fbf" />
-                What type of care does your family need?
+                What type of care does your family need in Ibadan?
               </div>
               <div className="symptom-pills">
                 {symptoms.map((s, i) => (
@@ -86,7 +86,7 @@ export function Hero({ onOpenBooking, onNavigate: _ }: HeroProps) {
             <div className="hero-img-frame">
               <img
                 src="/images/nurse-bp-check.jpg"
-                alt="Nurse Adaeze (TheSanitasNurse) checking blood pressure of an elderly patient at home in Lagos"
+                alt="Nurse Adaeze (TheSanitasNurse) checking blood pressure of an elderly patient at home in Ibadan"
                 loading="eager"
               />
             </div>
@@ -97,7 +97,7 @@ export function Hero({ onOpenBooking, onNavigate: _ }: HeroProps) {
               </div>
               <div>
                 <div className="fc-text-title">NMCN Licensed RN & RM</div>
-                <div className="fc-text-sub">Fully certified & background verified</div>
+                <div className="fc-text-sub">Fully certified in Ibadan, Oyo State</div>
               </div>
             </div>
 
@@ -107,7 +107,7 @@ export function Hero({ onOpenBooking, onNavigate: _ }: HeroProps) {
               </div>
               <div>
                 <div className="fc-text-title">100% Care Continuity</div>
-                <div className="fc-text-sub">Always the same nurse, zero strangers</div>
+                <div className="fc-text-sub">Always Nurse Adaeze, zero strangers</div>
               </div>
             </div>
           </div>

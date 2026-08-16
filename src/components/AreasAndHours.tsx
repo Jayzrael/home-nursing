@@ -6,11 +6,11 @@ export function AreasAndHours() {
     <section id="areas" className="section-py areas-section">
       <div className="container">
         <div className="section-header-center">
-          <div className="section-badge"><MapPin size={13} /> Service Reach</div>
-          <h2 className="section-title">Service Areas & Working Hours</h2>
+          <div className="section-badge"><MapPin size={13} /> Ibadan Service Reach</div>
+          <h2 className="section-title">Service Areas & Practice Hours in Ibadan</h2>
           <p className="section-subtitle">
-            I provide in-home private nursing visits across Lagos Island, Mainland, and pre-scheduled 
-            nursing blocks in Abuja — with flexible hours tailored to your family's schedule.
+            I provide in-home private nursing visits across all major zones in Ibadan, Oyo State — 
+            from Bodija and Agodi GRA to Oluyole, Ring Road, Jericho, Akobo, and surrounding areas.
           </p>
         </div>
 
@@ -18,7 +18,7 @@ export function AreasAndHours() {
           {/* Left: Area Cards */}
           <div>
             <h3 style={{ fontFamily: 'Outfit', fontSize: '1.3rem', fontWeight: 700, color: 'var(--text-dark)', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <MapPin size={18} color="#7a0fbf" /> Where I Provide In-Home Care
+              <MapPin size={18} color="#7a0fbf" /> Where I Provide In-Home Care in Ibadan
             </h3>
             <div className="area-cards-list">
               {SERVICE_AREAS_DATA.map((area, i) => (
@@ -46,7 +46,7 @@ export function AreasAndHours() {
                   <Clock size={18} style={{ marginRight: '0.4rem', verticalAlign: 'middle' }} />
                   Practice Hours & Availability
                 </div>
-                <div className="hours-header-sub">Personally managed by Nurse Adaeze Okonkwo (RN, RM)</div>
+                <div className="hours-header-sub">Personally managed in Ibadan by Nurse Adaeze Okonkwo (RN, RM)</div>
               </div>
               <div className="hours-list">
                 {WORKING_HOURS_DATA.map((h, i) => (

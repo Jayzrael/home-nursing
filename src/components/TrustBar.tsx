@@ -7,21 +7,21 @@ export function TrustBar() {
     { value: 'RN / RM', label: 'NMCN Licensed Nurse & Midwife' },
     { value: '8+ Years', label: 'Clinical Hospital & Home Experience' },
     { value: '1-on-1', label: 'Guaranteed Dedicated Care Continuity' },
-    { value: '24/7', label: 'Direct Family WhatsApp & Emergency Line' },
+    { value: '24/7', label: 'Direct Family WhatsApp Line' },
   ];
 
   return (
-    <div style={{ background: 'var(--primary)', color: 'white', padding: '1.1rem 0', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+    <section className="trust-bar-section">
       <div className="container">
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+        <div className="trust-bar-grid">
           {stats.map((s, i) => (
-            <div key={i} style={{ textAlign: 'center', padding: '0 0.75rem' }}>
-              <div style={{ fontFamily: 'Outfit', fontSize: '1.4rem', fontWeight: 800, color: '#e0b8ff' }}>{s.value}</div>
-              <div style={{ fontSize: '0.76rem', opacity: 0.75, marginTop: '0.1rem' }}>{s.label}</div>
+            <div key={i} className="trust-bar-item">
+              <div className="trust-bar-val">{s.value}</div>
+              <div className="trust-bar-lbl">{s.label}</div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

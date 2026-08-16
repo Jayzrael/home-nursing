@@ -150,7 +150,7 @@ export function App() {
                 <div className="section-badge">Service Reach</div>
                 <h1 className="section-title">Service Areas & Practice Hours</h1>
                 <p className="section-subtitle" style={{ marginBottom: '2.5rem' }}>
-                  Explore the regions I serve across Lagos and Abuja, and check availability for home visits.
+                  Explore the regions I serve across Ibadan (Bodija, Oluyole, Jericho, Ring Road, Akobo & beyond), and check availability for home visits.
                 </p>
               </div>
             </div>
@@ -170,7 +170,7 @@ export function App() {
                 <div className="section-badge">Who I Am</div>
                 <h1 className="section-title">About Nurse Adaeze & TheSanitasNurse</h1>
                 <p className="section-subtitle" style={{ marginBottom: '2.5rem' }}>
-                  Providing dedicated, hospital-grade clinical and compassionate private home nursing care in Nigeria.
+                  Providing dedicated, hospital-grade clinical and compassionate private home nursing care in Ibadan, Oyo State.
                 </p>
               </div>
             </div>

@@ -20,8 +20,8 @@ export function LegalModals({ activeModal, onClose }: LegalModalsProps) {
 
             <h3>1. Who We Are</h3>
             <p>
-              TheSanitasNurse is a clinical home care practice registered in Nigeria,
-              with regional dispatch hubs in Lagos, Abuja, and Port Harcourt. We are committed to protecting the
+              TheSanitasNurse is a licensed clinical home care practice registered in Nigeria,
+              based in Ibadan, Oyo State (with primary dispatch hubs across Bodija, Oluyole, Jericho, and Ring Road). We are committed to protecting the
               privacy and confidentiality of our patients' personal and medical information.
             </p>
 
@@ -148,7 +148,7 @@ export function LegalModals({ activeModal, onClose }: LegalModalsProps) {
             <h3>8. Governing Law</h3>
             <p>
               These terms are governed by the laws of the Federal Republic of Nigeria. Any disputes shall be 
-              resolved through amicable mediation before recourse to the courts of Lagos State, Nigeria.
+              resolved through amicable mediation before recourse to the courts of Oyo State, Nigeria.
             </p>
 
             <h3>9. Changes to Terms</h3>

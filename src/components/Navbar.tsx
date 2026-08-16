@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { PlusCircle, Menu, X, Calendar, Phone } from 'lucide-react';
+import { PlusCircle, Menu, X, Calendar, Phone, MessageSquare, Shield } from 'lucide-react';
 import { THESANITAS_NURSE_INFO } from '../data/nursingData';
 
 interface NavbarProps {
@@ -13,10 +13,22 @@ export function Navbar({ activePage, onNavigate, onOpenBooking }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 15);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [menuOpen]);
 
   const nav = (page: string) => {
     onNavigate(page);
@@ -40,22 +52,22 @@ export function Navbar({ activePage, onNavigate, onOpenBooking }: NavbarProps) {
           <div className="topbar-inner">
             <div className="topbar-emergency">
               <span className="pulse-dot"></span>
-              <span>Direct Nurse Line:</span>
-              <a href={`tel:${THESANITAS_NURSE_INFO.phones[0].link}`} style={{ color: '#fff', fontWeight: 700 }}>
+              <span className="topbar-label">Direct Line:</span>
+              <a href={`tel:${THESANITAS_NURSE_INFO.phones[0].link}`} className="topbar-phone-link">
                 {THESANITAS_NURSE_INFO.phones[0].number}
               </a>
             </div>
             <div className="topbar-links">
-              <a href={`mailto:${THESANITAS_NURSE_INFO.email}`} className="topbar-link">
-                {THESANITAS_NURSE_INFO.email}
-              </a>
+              <span className="topbar-badge-pill">
+                <Shield size={11} /> NMCN Licensed RN & RM
+              </span>
               <a
                 href={`https://wa.me/${THESANITAS_NURSE_INFO.whatsappNumber}?text=${encodeURIComponent(THESANITAS_NURSE_INFO.whatsappPrefill)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="topbar-link"
+                className="topbar-link topbar-whatsapp"
               >
-                Direct WhatsApp
+                <MessageSquare size={12} /> WhatsApp Direct
               </a>
             </div>
           </div>
@@ -66,16 +78,19 @@ export function Navbar({ activePage, onNavigate, onOpenBooking }: NavbarProps) {
       <header className={`navbar${scrolled ? ' scrolled' : ''}`}>
         <div className="container">
           <div className="navbar-inner">
+            
+            {/* Logo */}
             <div className="nav-logo" onClick={() => nav('home')}>
               <div className="logo-icon">
                 <PlusCircle size={22} />
               </div>
-              <div>
+              <div className="logo-text-wrap">
                 <div className="logo-text-primary">TheSanitasNurse</div>
-                <div className="logo-text-sub">Licensed Private Home Nurse · Nigeria</div>
+                <div className="logo-text-sub">Licensed Private Home Nurse</div>
               </div>
             </div>
 
+            {/* Desktop Navigation Links */}
             <ul className="nav-links">
               {pages.map(p => (
                 <li key={p.id}>
@@ -89,52 +104,95 @@ export function Navbar({ activePage, onNavigate, onOpenBooking }: NavbarProps) {
               ))}
             </ul>
 
+            {/* Actions */}
             <div className="nav-actions">
               <a
                 href={`tel:${THESANITAS_NURSE_INFO.phones[0].link}`}
-                className="btn btn-outline btn-sm"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
+                className="btn btn-outline btn-sm nav-call-btn"
               >
                 <Phone size={14} /> Call Direct
               </a>
-              <button className="btn btn-primary btn-sm" onClick={onOpenBooking}>
-                <Calendar size={15} /> Book a Visit
-              </button>
               <button
-                className="nav-toggle"
+                className="btn btn-primary btn-sm nav-book-btn"
+                onClick={onOpenBooking}
+              >
+                <Calendar size={14} /> Book a Visit
+              </button>
+              
+              {/* Mobile Hamburger Toggle Button */}
+              <button
+                className={`nav-toggle${menuOpen ? ' active' : ''}`}
                 onClick={() => setMenuOpen(!menuOpen)}
-                aria-label="Toggle menu"
+                aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={menuOpen}
               >
                 {menuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
-          </div>
 
-          {/* Mobile */}
-          <div className={`mobile-menu${menuOpen ? ' open' : ''}`}>
-            {pages.map(p => (
+          </div>
+        </div>
+
+        {/* Mobile Menu Dropdown & Backdrop */}
+        {menuOpen && (
+          <div className="mobile-backdrop" onClick={() => setMenuOpen(false)}></div>
+        )}
+        <div className={`mobile-drawer${menuOpen ? ' open' : ''}`}>
+          <div className="mobile-drawer-inner">
+            <div className="mobile-drawer-header">
+              <div className="mobile-drawer-nurse-badge">
+                <Shield size={13} /> Nurse Adaeze Okonkwo (RN, RM)
+              </div>
+            </div>
+
+            <nav className="mobile-nav-list">
+              {pages.map(p => (
+                <button
+                  key={p.id}
+                  className={`mobile-menu-link${activePage === p.id ? ' active' : ''}`}
+                  onClick={() => nav(p.id)}
+                >
+                  <span>{p.label}</span>
+                  {activePage === p.id && <span className="mobile-active-dot">•</span>}
+                </button>
+              ))}
+            </nav>
+
+            <div className="mobile-drawer-footer">
               <button
-                key={p.id}
-                className={`mobile-menu-link${activePage === p.id ? ' active' : ''}`}
-                onClick={() => nav(p.id)}
+                className="btn btn-primary btn-lg"
+                style={{ width: '100%', marginBottom: '0.65rem' }}
+                onClick={() => { setMenuOpen(false); onOpenBooking(); }}
               >
-                {p.label}
+                <Calendar size={16} /> Book a Private Home Visit
               </button>
-            ))}
-            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.75rem' }}>
-              <a
-                href={`tel:${THESANITAS_NURSE_INFO.phones[0].link}`}
-                className="btn btn-outline"
-                style={{ flex: 1, textAlign: 'center' }}
-              >
-                <Phone size={15} /> Call Direct
-              </a>
-              <button className="btn btn-primary" style={{ flex: 1 }} onClick={() => { setMenuOpen(false); onOpenBooking(); }}>
-                <Calendar size={16} /> Book Visit
-              </button>
+              
+              <div className="mobile-drawer-quick-links">
+                <a
+                  href={`tel:${THESANITAS_NURSE_INFO.phones[0].link}`}
+                  className="btn btn-outline"
+                  style={{ flex: 1 }}
+                >
+                  <Phone size={15} /> Call Direct
+                </a>
+                <a
+                  href={`https://wa.me/${THESANITAS_NURSE_INFO.whatsappNumber}?text=${encodeURIComponent(THESANITAS_NURSE_INFO.whatsappPrefill)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn"
+                  style={{ flex: 1, background: '#25d366', color: 'white', border: 'none' }}
+                >
+                  <MessageSquare size={15} /> WhatsApp
+                </a>
+              </div>
+
+              <div className="mobile-drawer-contact-note">
+                Available 24/7 for urgent patient care & consultation
+              </div>
             </div>
           </div>
         </div>
+
       </header>
     </>
   );
