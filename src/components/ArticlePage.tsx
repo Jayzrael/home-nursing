@@ -1,6 +1,6 @@
 import { ArrowLeft, Calendar, Clock, Share2, MessageSquare } from 'lucide-react';
 import { BLOG_POSTS } from '../data/blogData';
-import { AVON_HOME_NURSING_INFO } from '../data/nursingData';
+import { DHERM_HEALTH_INFO } from '../data/nursingData';
 
 interface ArticlePageProps {
   slug: string;
@@ -70,52 +70,49 @@ export function ArticlePage({ slug, onBack, onSelectPost, onOpenBooking }: Artic
 
   if (!post) {
     return (
-      <div className="section-py" style={{ textAlign: 'center' }}>
-        <p>Article not found.</p>
-        <button className="btn btn-primary" onClick={onBack} style={{ marginTop: '1rem' }}>← Back to Blog</button>
+      <div className="container" style={{ padding: '6rem 1.5rem', textAlign: 'center' }}>
+        <h2>Article Not Found</h2>
+        <p style={{ color: 'var(--text-muted)', margin: '1rem 0 2rem' }}>
+          The article you are looking for does not exist or has been moved.
+        </p>
+        <button className="btn btn-primary" onClick={onBack}>
+          <ArrowLeft size={16} /> Back to Patient Resources
+        </button>
       </div>
     );
   }
 
-  const related = BLOG_POSTS.filter(p => p.slug !== slug && p.category === post.category).slice(0, 3);
+  const related = BLOG_POSTS.filter(p => p.category === post.category && p.slug !== post.slug).slice(0, 3);
 
   const handleShare = () => {
-    const url = `${window.location.href}#blog/${post.slug}`;
     if (navigator.share) {
-      navigator.share({ title: post.title, text: post.excerpt, url }).catch(() => {});
+      navigator.share({ title: post.title, url: window.location.href }).catch(() => {});
     } else {
-      navigator.clipboard?.writeText(url);
+      navigator.clipboard.writeText(window.location.href);
+      alert('Article link copied to clipboard!');
     }
   };
 
   return (
     <div className="article-page">
-      {/* Hero */}
+      {/* Header */}
       <div className="article-hero">
         <div className="container">
           <button className="article-back-btn" onClick={onBack}>
-            <ArrowLeft size={16} /> Back to Blog
+            <ArrowLeft size={16} /> Back to Resources
           </button>
 
-          <span className="article-cat-label">{post.category}</span>
-
-          <h1 className="article-title">{post.title}</h1>
+          <span className="article-cat-badge">{post.category}</span>
+          <h1 className="article-hero-title">{post.title}</h1>
 
           <div className="article-meta-row">
-            <div className="article-author-block">
-              <img src={post.author.avatar} alt={post.author.name} className="article-author-avatar" />
-              <div>
-                <div className="article-author-name">{post.author.name}</div>
-                <div className="article-author-role">{post.author.role}</div>
-              </div>
-            </div>
-            <div className="article-meta-divider"></div>
             <div className="article-meta-item">
-              <Calendar size={14} />
+              <Calendar size={13} />
               <span>{post.date}</span>
             </div>
+            <div className="article-meta-sep">·</div>
             <div className="article-meta-item">
-              <Clock size={14} />
+              <Clock size={13} />
               <span>{post.readTime}</span>
             </div>
             <button
@@ -125,10 +122,6 @@ export function ArticlePage({ slug, onBack, onSelectPost, onOpenBooking }: Artic
             >
               <Share2 size={14} /> Share
             </button>
-          </div>
-
-          <div className="article-hero-img-wrap">
-            <img src={post.image} alt={post.title} className="article-hero-img" />
           </div>
         </div>
       </div>
@@ -155,21 +148,19 @@ export function ArticlePage({ slug, onBack, onSelectPost, onOpenBooking }: Artic
                 Need Professional Home Nursing Care?
               </h3>
               <p style={{ opacity: 0.9, marginBottom: '1.25rem', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                Book dedicated hospital-grade home nursing in the safety and
-                comfort of your home across Ibadan, Oyo State.
+                Book dedicated hospital-grade home nursing or schedule an online consultation with Nurse Adeyemi Damilola Mary (RN, RM, BLS, BNSc).
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                <button className="btn btn-white" onClick={onOpenBooking}>
-                  <Calendar size={16} /> Book a Nurse Now
+                <button className="btn btn-gold" onClick={onOpenBooking}>
+                  <Calendar size={16} /> Book an Appointment
                 </button>
                 <a
-                  href={`https://wa.me/${AVON_HOME_NURSING_INFO.whatsappNumber}?text=${encodeURIComponent('Hello TheSanitasNurse, I read your article and would like to enquire about home nursing care.')}`}
+                  href={`https://wa.me/${DHERM_HEALTH_INFO.whatsappNumber}?text=${encodeURIComponent('Hello Nurse Adeyemi, I read your health education article and would like to inquire about nursing care.')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn"
-                  style={{ background: '#25d366', color: 'white', border: 'none' }}
+                  className="btn btn-whatsapp"
                 >
-                  <MessageSquare size={16} /> WhatsApp Us
+                  <MessageSquare size={16} /> WhatsApp Direct
                 </a>
               </div>
             </div>
@@ -179,12 +170,12 @@ export function ArticlePage({ slug, onBack, onSelectPost, onOpenBooking }: Artic
           <aside className="article-sidebar">
             {/* Book */}
             <div className="sidebar-card">
-              <div className="sidebar-card-title">Get Home Nursing Care</div>
+              <div className="sidebar-card-title">Need Clinical Support?</div>
               <button className="btn btn-primary sidebar-book-btn" onClick={onOpenBooking}>
-                <Calendar size={15} /> Book a Nurse
+                <Calendar size={15} /> Book an Appointment
               </button>
               <a
-                href={`https://wa.me/${AVON_HOME_NURSING_INFO.whatsappNumber}?text=${encodeURIComponent(AVON_HOME_NURSING_INFO.whatsappPrefill)}`}
+                href={`https://wa.me/${DHERM_HEALTH_INFO.whatsappNumber}?text=${encodeURIComponent(DHERM_HEALTH_INFO.whatsappPrefill)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn sidebar-book-btn sidebar-whatsapp"
@@ -192,7 +183,7 @@ export function ArticlePage({ slug, onBack, onSelectPost, onOpenBooking }: Artic
                 <MessageSquare size={15} /> WhatsApp Triage
               </a>
               <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '0.5rem' }}>
-                24/7 emergency dispatch available
+                Direct Phone: {DHERM_HEALTH_INFO.phone}
               </div>
             </div>
 

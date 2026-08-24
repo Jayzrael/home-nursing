@@ -1,28 +1,26 @@
-import { CheckCircle, Shield, Award, Heart, Stethoscope } from 'lucide-react';
+import { CheckCircle, Shield, Award, Heart, Stethoscope, Sparkles } from 'lucide-react';
+import { DHERM_HEALTH_INFO } from '../data/nursingData';
 
-/**
- * NurseVetting — Solo Nurse Profile & Clinical Verification
- */
 export function NurseVetting() {
   const credentials = [
     {
-      title: 'NMCN Registered Nurse (RN)',
-      desc: 'Certified by the Nursing and Midwifery Council of Nigeria with continuous active clinical licensure.',
+      title: 'Registered Nurse & Midwife (RN, RM)',
+      desc: 'Dual professional licensure with continuous active clinical certification across general nursing and midwifery.',
       icon: <Shield size={20} />
     },
     {
-      title: 'NMCN Registered Midwife (RM)',
-      desc: 'Specialized maternal and neonatal clinical certification for antenatal, postnatal, and infant care.',
-      icon: <Heart size={20} />
-    },
-    {
-      title: '8+ Years Clinical Practice',
-      desc: 'Extensive hands-on ward, surgical recovery, and private home care nursing experience across top Nigerian hospitals.',
+      title: 'BLS & BNSc Certified',
+      desc: 'Certified in Basic Life Support (BLS) and holding a Bachelor of Nursing Science (BNSc) degree.',
       icon: <Award size={20} />
     },
     {
-      title: 'Advanced Wound Care & Asepsis',
-      desc: 'Trained in sterile wound debridement, post-surgical incision dressing, and bedsore prevention techniques.',
+      title: 'Clinical Training Since 2020',
+      desc: 'Extensive hands-on training across pediatric, medical-surgical, emergency, and psychiatric nursing environments.',
+      icon: <Heart size={20} />
+    },
+    {
+      title: 'Sterile Asepsis & Wound Management',
+      desc: 'Hospital-benchmark sterile techniques for post-surgical incisions, C-sections, and chronic diabetic ulcer care.',
       icon: <Stethoscope size={20} />
     }
   ];
@@ -30,24 +28,24 @@ export function NurseVetting() {
   const standards = [
     {
       step: '01',
-      title: 'Licensed & Verified',
-      desc: 'Active NMCN registration (Licence No. NMCN/RN/0087432), NIN identity verified, and background-checked for absolute family safety.',
-      color: '#7a0fbf',
-      bg: 'var(--lilac)',
+      title: 'Certified & Verified',
+      desc: 'Holding full credentials as RN, RM, BLS, and BNSc with rigorous training and verified professional nursing integrity.',
+      color: '#046A38',
+      bg: '#E8F5EE',
     },
     {
       step: '02',
       title: 'Hospital-Grade Asepsis',
-      desc: 'Strict adherence to sterile technique, single-use clinical materials, accurate vital sign logs, and physician escalation protocols.',
-      color: '#059669',
-      bg: '#ecfdf5',
+      desc: 'Strict adherence to sterile technique, single-use clinical materials, accurate vitals tracking, and physician collaboration.',
+      color: '#0B6E4F',
+      bg: '#E8F5EE',
     },
     {
       step: '03',
       title: 'Guaranteed 1:1 Continuity',
-      desc: 'You never get a rotating roster of unfamiliar temp nurses. I personally handle your loved one\'s care at every single scheduled visit.',
-      color: '#d97706',
-      bg: '#fff7ed',
+      desc: 'You never get a rotating roster of unfamiliar temp staff. Nurse Adeyemi personally handles every scheduled visit.',
+      color: '#B89324',
+      bg: '#FBF5E6',
     },
   ];
 
@@ -57,10 +55,13 @@ export function NurseVetting() {
         
         {/* Header */}
         <div className="section-header-center">
-          <div className="section-badge">Meet Your Private Nurse</div>
-          <h2 className="section-title">Nurse Adaeze Okonkwo (RN, RM)</h2>
+          <div className="section-badge">
+            <Sparkles size={14} className="gold-accent-icon" />
+            <span>Professional Clinical Credentials</span>
+          </div>
+          <h2 className="section-title">Adeyemi Damilola Mary ({DHERM_HEALTH_INFO.nurseQualifications})</h2>
           <p className="section-subtitle">
-            Licensed Registered Nurse and Midwife providing dedicated, personalized clinical home care in Nigeria.
+            Registered Nurse & Midwife delivering dedicated, compassionate clinical home care and virtual health support.
           </p>
         </div>
 
@@ -68,19 +69,31 @@ export function NurseVetting() {
         <div className="vetting-profile-card">
           <div className="vetting-profile-grid">
             
-            {/* Photo & Badge */}
+            {/* 2D Vector Visual Badge */}
             <div className="vetting-photo-col">
-              <div className="vetting-photo-frame">
-                <img
-                  src="/images/nurse-bp-check.jpg"
-                  alt="Nurse Adaeze Okonkwo - TheSanitasNurse"
-                  className="vetting-photo-img"
-                  loading="lazy"
-                />
+              <div className="vetting-vector-frame">
+                <svg viewBox="0 0 280 280" className="vetting-vector-svg" aria-label="Flat 2D vector nurse caregiver emblem">
+                  <circle cx="140" cy="140" r="125" fill="#E8F5EE" stroke="#046A38" strokeWidth="3" />
+                  <circle cx="140" cy="140" r="105" fill="#FFFFFF" stroke="#D4AF37" strokeWidth="2" strokeDasharray="4,3" />
+                  
+                  {/* Nurse Silhouette */}
+                  <g transform="translate(70, 45)">
+                    <circle cx="70" cy="45" r="28" fill="#2D4A3E" />
+                    <circle cx="70" cy="50" r="22" fill="#FADCB9" />
+                    {/* Scrub */}
+                    <path d="M30 85 C30 75 110 75 110 85 L120 170 C120 175 20 175 20 170 Z" fill="#046A38" />
+                    {/* Stethoscope */}
+                    <path d="M55 80 C55 105 85 105 85 80" fill="none" stroke="#D4AF37" strokeWidth="3" />
+                    <circle cx="70" cy="106" r="4" fill="#D4AF37" />
+                    {/* Gold Cross */}
+                    <rect x="58" y="115" width="24" height="24" rx="4" fill="#0B6E4F" />
+                    <path d="M70 120 L70 134 M63 127 L77 127" stroke="#D4AF37" strokeWidth="2.5" strokeLinecap="round" />
+                  </g>
+                </svg>
               </div>
               <div className="vetting-badge-wrap">
                 <div className="vetting-nmcn-badge">
-                  <Shield size={13} /> NMCN Licenced: NMCN/RN/0087432
+                  <Shield size={13} /> {DHERM_HEALTH_INFO.nurseQualifications} Certified
                 </div>
               </div>
             </div>
@@ -88,13 +101,13 @@ export function NurseVetting() {
             {/* Bio & Credentials */}
             <div className="vetting-info-col">
               <div className="vetting-role-tag">
-                Founder & Lead Practitioner
+                Lead Clinical Practitioner · DhermHealthConnect
               </div>
               <h3 className="vetting-quote">
-                "My mission is to treat every patient with the clinical precision of a hospital and the warmth of family."
+                "{DHERM_HEALTH_INFO.careApproach}"
               </h3>
               <p className="vetting-bio-text">
-                With over 8 years of hospital-based ward nursing and private home practice in Nigeria, I founded <strong>TheSanitasNurse</strong> to solve a major problem Nigerian families face: lack of consistent, trustworthy, and hospital-grade bedside nursing at home. When you work with me, you communicate directly with your nurse and receive uncompromised 1:1 attention.
+                {DHERM_HEALTH_INFO.shortBio}
               </p>
 
               {/* 4 Credential items */}
@@ -102,7 +115,7 @@ export function NurseVetting() {
                 {credentials.map((c, i) => (
                   <div key={i} className="vetting-cred-item">
                     <div className="vetting-cred-title">
-                      {c.icon} {c.title}
+                      {c.icon} <span>{c.title}</span>
                     </div>
                     <div className="vetting-cred-desc">
                       {c.desc}

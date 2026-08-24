@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MessageSquare } from 'lucide-react';
+import { MessageSquare, Sparkles } from 'lucide-react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TrustBar } from './components/TrustBar';
@@ -8,7 +8,6 @@ import { Services } from './components/Services';
 import { WhyHomeCare } from './components/WhyHomeCare';
 import { HowItWorks } from './components/HowItWorks';
 import { DiasporaCare } from './components/DiasporaCare';
-import { Testimonials } from './components/Testimonials';
 import { AreasAndHours } from './components/AreasAndHours';
 import { FAQ } from './components/FAQ';
 import { About } from './components/About';
@@ -19,10 +18,10 @@ import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
 import { IntakeModal } from './components/IntakeModal';
 import { LegalModals } from './components/LegalModals';
-import { AVON_HOME_NURSING_INFO } from './data/nursingData';
+import { DHERM_HEALTH_INFO } from './data/nursingData';
 import './App.css';
 
-type Page = 'home' | 'services' | 'areas' | 'about' | 'blog' | 'contact';
+type Page = 'home' | 'about' | 'services' | 'blog' | 'contact';
 type Modal = 'booking' | 'intake' | 'privacy' | 'terms' | null;
 
 export function App() {
@@ -39,7 +38,7 @@ export function App() {
         setPage('blog');
         setArticleSlug(slug);
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (['home', 'services', 'areas', 'about', 'blog', 'contact'].includes(hash as Page)) {
+      } else if (['home', 'about', 'services', 'blog', 'contact'].includes(hash as Page)) {
         setPage(hash as Page);
         setArticleSlug(null);
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -51,6 +50,10 @@ export function App() {
   }, []);
 
   const navigate = (p: string) => {
+    if (p === 'booking') {
+      openBooking();
+      return;
+    }
     setPage(p as Page);
     setArticleSlug(null);
     window.location.hash = p;
@@ -68,17 +71,9 @@ export function App() {
   const openIntake = () => setModal('intake');
   const closeModal = () => setModal(null);
 
-  // Contact page scrolls to BookingCTA
-  useEffect(() => {
-    if (page === 'contact') {
-      const el = document.getElementById('contact-section');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [page]);
-
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      {/* Navigation */}
+      {/* Top Navigation */}
       <Navbar activePage={page} onNavigate={navigate} onOpenBooking={openBooking} />
 
       <main style={{ flex: 1 }}>
@@ -93,7 +88,6 @@ export function App() {
             <WhyHomeCare onOpenBooking={openBooking} />
             <HowItWorks onOpenBooking={openBooking} />
             <DiasporaCare onOpenBooking={openBooking} />
-            <Testimonials />
             <AreasAndHours />
             <FAQ />
             <About onOpenBooking={openBooking} />
@@ -106,12 +100,15 @@ export function App() {
               <div className="container">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1rem' }}>
                   <div>
-                    <div className="section-badge">Health Education</div>
-                    <h2 className="section-title">Latest Health Articles</h2>
-                    <p className="section-subtitle">Real educational articles written by our Nigerian nurses and medical team.</p>
+                    <div className="section-badge">
+                      <Sparkles size={13} className="gold-accent-icon" />
+                      <span>Patient Resources</span>
+                    </div>
+                    <h2 className="section-title">Health Literacy & Wellness Guides</h2>
+                    <p className="section-subtitle">Practical healthcare articles and disease prevention coaching from licensed clinical practitioners.</p>
                   </div>
                   <button className="btn btn-primary" onClick={() => navigate('blog')}>
-                    View All Articles →
+                    View All Resources →
                   </button>
                 </div>
                 <Blog onSelectPost={openArticle} />
@@ -120,70 +117,54 @@ export function App() {
           </>
         )}
 
-        {/* SERVICES PAGE */}
-        {page === 'services' && (
-          <>
-            <div style={{ padding: '3rem 0 0', background: 'var(--surface)', borderBottom: '1px solid var(--lilac-border)' }}>
-              <div className="container">
-                <div className="section-badge">Clinical Home Care</div>
-                <h1 className="section-title">Private Home Nursing Services</h1>
-                <p className="section-subtitle" style={{ marginBottom: '2.5rem' }}>
-                  Hospital-grade clinical care delivered directly to your bedside with guaranteed 
-                  one-on-one nurse continuity.
-                </p>
-              </div>
-            </div>
-            <Services onOpenBooking={openBooking} />
-            <NurseVetting />
-            <HowItWorks onOpenBooking={openBooking} />
-            <div id="contact-section">
-              <BookingCTA onOpenBooking={openBooking} onOpenIntake={openIntake} />
-            </div>
-          </>
-        )}
-
-        {/* AREAS PAGE */}
-        {page === 'areas' && (
-          <>
-            <div style={{ padding: '3rem 0 0', background: 'var(--surface)', borderBottom: '1px solid var(--lilac-border)' }}>
-              <div className="container">
-                <div className="section-badge">Service Reach</div>
-                <h1 className="section-title">Service Areas & Practice Hours</h1>
-                <p className="section-subtitle" style={{ marginBottom: '2.5rem' }}>
-                  Explore the regions I serve across Ibadan (Bodija, Oluyole, Jericho, Ring Road, Akobo & beyond), and check availability for home visits.
-                </p>
-              </div>
-            </div>
-            <AreasAndHours />
-            <FAQ />
-            <div id="contact-section">
-              <BookingCTA onOpenBooking={openBooking} onOpenIntake={openIntake} />
-            </div>
-          </>
-        )}
-
         {/* ABOUT PAGE */}
         {page === 'about' && (
           <>
-            <div style={{ padding: '3rem 0 0', background: 'var(--surface)', borderBottom: '1px solid var(--lilac-border)' }}>
+            <div style={{ padding: '3.5rem 0 0', background: 'var(--surface)', borderBottom: '1px solid var(--lilac-border)' }}>
               <div className="container">
-                <div className="section-badge">Who I Am</div>
-                <h1 className="section-title">About Nurse Adaeze & TheSanitasNurse</h1>
+                <div className="section-badge">
+                  <Sparkles size={13} className="gold-accent-icon" />
+                  <span>About Your Nurse</span>
+                </div>
+                <h1 className="section-title">About {DHERM_HEALTH_INFO.nurseName}</h1>
                 <p className="section-subtitle" style={{ marginBottom: '2.5rem' }}>
-                  Providing dedicated, hospital-grade clinical and compassionate private home nursing care in Ibadan, Oyo State.
+                  Registered Nurse & Midwife ({DHERM_HEALTH_INFO.nurseQualifications}) providing hospital-standard clinical home care, chronic condition monitoring, and maternal health support.
                 </p>
               </div>
             </div>
             <About onOpenBooking={openBooking} />
             <NurseVetting />
-            <Testimonials />
             <div id="contact-section">
               <BookingCTA onOpenBooking={openBooking} onOpenIntake={openIntake} />
             </div>
           </>
         )}
 
-        {/* BLOG — article view */}
+        {/* SERVICES PAGE */}
+        {page === 'services' && (
+          <>
+            <div style={{ padding: '3.5rem 0 0', background: 'var(--surface)', borderBottom: '1px solid var(--lilac-border)' }}>
+              <div className="container">
+                <div className="section-badge">
+                  <Sparkles size={13} className="gold-accent-icon" />
+                  <span>Clinical Suite</span>
+                </div>
+                <h1 className="section-title">Our 7 Core Nursing Specialties</h1>
+                <p className="section-subtitle" style={{ marginBottom: '2.5rem' }}>
+                  From virtual consultations to sterile wound care and in-home bedside nursing, explore our comprehensive care offerings.
+                </p>
+              </div>
+            </div>
+            <Services onOpenBooking={openBooking} />
+            <HowItWorks onOpenBooking={openBooking} />
+            <WhyHomeCare onOpenBooking={openBooking} />
+            <div id="contact-section">
+              <BookingCTA onOpenBooking={openBooking} onOpenIntake={openIntake} />
+            </div>
+          </>
+        )}
+
+        {/* BLOG / PATIENT RESOURCES — article view */}
         {page === 'blog' && articleSlug && (
           <ArticlePage
             slug={articleSlug}
@@ -193,7 +174,7 @@ export function App() {
           />
         )}
 
-        {/* BLOG — listing view */}
+        {/* BLOG / PATIENT RESOURCES — listing view */}
         {page === 'blog' && !articleSlug && (
           <>
             <Blog onSelectPost={openArticle} />
@@ -206,6 +187,18 @@ export function App() {
         {/* CONTACT PAGE */}
         {page === 'contact' && (
           <div id="contact-section">
+            <div style={{ padding: '3.5rem 0 0', background: 'var(--surface)', borderBottom: '1px solid var(--lilac-border)' }}>
+              <div className="container">
+                <div className="section-badge">
+                  <Sparkles size={13} className="gold-accent-icon" />
+                  <span>Get in Touch</span>
+                </div>
+                <h1 className="section-title">Contact DhermHealthConnect</h1>
+                <p className="section-subtitle" style={{ marginBottom: '2.5rem' }}>
+                  We are here to answer your clinical questions, discuss scheduling, and arrange in-home visits or virtual consultations.
+                </p>
+              </div>
+            </div>
             <BookingCTA onOpenBooking={openBooking} onOpenIntake={openIntake} />
             <AreasAndHours />
             <FAQ />
@@ -220,14 +213,14 @@ export function App() {
         onOpenTerms={() => setModal('terms')}
       />
 
-      {/* WhatsApp FAB */}
+      {/* WhatsApp Floating Action Button */}
       <a
-        href={`https://wa.me/${AVON_HOME_NURSING_INFO.whatsappNumber}?text=${encodeURIComponent(AVON_HOME_NURSING_INFO.whatsappPrefill)}`}
+        href={`https://wa.me/${DHERM_HEALTH_INFO.whatsappNumber}?text=${encodeURIComponent(DHERM_HEALTH_INFO.whatsappPrefill)}`}
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-fab"
         aria-label="Chat on WhatsApp"
-        title="WhatsApp — Book a Nurse / Quick Triage"
+        title="WhatsApp — Speak with Nurse Adeyemi"
       >
         <div className="whatsapp-fab-pulse"></div>
         <MessageSquare size={26} />

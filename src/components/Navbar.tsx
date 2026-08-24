@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { PlusCircle, Menu, X, Calendar, Phone, MessageSquare, Shield } from 'lucide-react';
-import { THESANITAS_NURSE_INFO } from '../data/nursingData';
+import { Shield, Menu, X, Calendar, Phone, MessageSquare, HeartHandshake } from 'lucide-react';
+import { DHERM_HEALTH_INFO } from '../data/nursingData';
 
 interface NavbarProps {
   activePage: string;
@@ -37,32 +37,32 @@ export function Navbar({ activePage, onNavigate, onOpenBooking }: NavbarProps) {
 
   const pages = [
     { id: 'home', label: 'Home' },
-    { id: 'services', label: 'Nursing Services' },
-    { id: 'about', label: 'About Your Nurse' },
-    { id: 'areas', label: 'Areas & Hours' },
-    { id: 'blog', label: 'Health Blog' },
+    { id: 'about', label: 'About' },
+    { id: 'services', label: 'Services' },
+    { id: 'booking', label: 'Book Appointment' },
+    { id: 'blog', label: 'Patient Resources' },
     { id: 'contact', label: 'Contact' },
   ];
 
   return (
     <>
-      {/* Top Bar */}
+      {/* Top Quick Triage Bar */}
       <div className="topbar">
         <div className="container">
           <div className="topbar-inner">
             <div className="topbar-emergency">
               <span className="pulse-dot"></span>
-              <span className="topbar-label">Direct Line:</span>
-              <a href={`tel:${THESANITAS_NURSE_INFO.phones[0].link}`} className="topbar-phone-link">
-                {THESANITAS_NURSE_INFO.phones[0].number}
+              <span className="topbar-label">Direct Care Line:</span>
+              <a href={`tel:${DHERM_HEALTH_INFO.phones[0].link}`} className="topbar-phone-link">
+                {DHERM_HEALTH_INFO.phones[0].number}
               </a>
             </div>
             <div className="topbar-links">
               <span className="topbar-badge-pill">
-                <Shield size={11} /> NMCN Licensed RN & RM
+                <Shield size={11} /> Certified RN, RM, BLS, BNSc
               </span>
               <a
-                href={`https://wa.me/${THESANITAS_NURSE_INFO.whatsappNumber}?text=${encodeURIComponent(THESANITAS_NURSE_INFO.whatsappPrefill)}`}
+                href={`https://wa.me/${DHERM_HEALTH_INFO.whatsappNumber}?text=${encodeURIComponent(DHERM_HEALTH_INFO.whatsappPrefill)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="topbar-link topbar-whatsapp"
@@ -82,11 +82,11 @@ export function Navbar({ activePage, onNavigate, onOpenBooking }: NavbarProps) {
             {/* Logo */}
             <div className="nav-logo" onClick={() => nav('home')}>
               <div className="logo-icon">
-                <PlusCircle size={22} />
+                <HeartHandshake size={22} />
               </div>
               <div className="logo-text-wrap">
-                <div className="logo-text-primary">TheSanitasNurse</div>
-                <div className="logo-text-sub">Licensed Private Home Nurse</div>
+                <div className="logo-text-primary">DhermHealthConnect</div>
+                <div className="logo-text-sub">Licensed Nursing Care · {DHERM_HEALTH_INFO.nurseQualifications}</div>
               </div>
             </div>
 
@@ -96,7 +96,13 @@ export function Navbar({ activePage, onNavigate, onOpenBooking }: NavbarProps) {
                 <li key={p.id}>
                   <button
                     className={`nav-link-btn${activePage === p.id ? ' active' : ''}`}
-                    onClick={() => nav(p.id)}
+                    onClick={() => {
+                      if (p.id === 'booking') {
+                        onOpenBooking();
+                      } else {
+                        nav(p.id);
+                      }
+                    }}
                   >
                     {p.label}
                   </button>
@@ -107,7 +113,7 @@ export function Navbar({ activePage, onNavigate, onOpenBooking }: NavbarProps) {
             {/* Actions */}
             <div className="nav-actions">
               <a
-                href={`tel:${THESANITAS_NURSE_INFO.phones[0].link}`}
+                href={`tel:${DHERM_HEALTH_INFO.phones[0].link}`}
                 className="btn btn-outline btn-sm nav-call-btn"
               >
                 <Phone size={14} /> Call Direct
@@ -141,7 +147,7 @@ export function Navbar({ activePage, onNavigate, onOpenBooking }: NavbarProps) {
           <div className="mobile-drawer-inner">
             <div className="mobile-drawer-header">
               <div className="mobile-drawer-nurse-badge">
-                <Shield size={13} /> Nurse Adaeze Okonkwo (RN, RM)
+                <Shield size={13} /> {DHERM_HEALTH_INFO.nurseName} ({DHERM_HEALTH_INFO.nurseQualifications})
               </div>
             </div>
 
@@ -150,7 +156,14 @@ export function Navbar({ activePage, onNavigate, onOpenBooking }: NavbarProps) {
                 <button
                   key={p.id}
                   className={`mobile-menu-link${activePage === p.id ? ' active' : ''}`}
-                  onClick={() => nav(p.id)}
+                  onClick={() => {
+                    if (p.id === 'booking') {
+                      setMenuOpen(false);
+                      onOpenBooking();
+                    } else {
+                      nav(p.id);
+                    }
+                  }}
                 >
                   <span>{p.label}</span>
                   {activePage === p.id && <span className="mobile-active-dot">•</span>}
@@ -164,30 +177,30 @@ export function Navbar({ activePage, onNavigate, onOpenBooking }: NavbarProps) {
                 style={{ width: '100%', marginBottom: '0.65rem' }}
                 onClick={() => { setMenuOpen(false); onOpenBooking(); }}
               >
-                <Calendar size={16} /> Book a Private Home Visit
+                <Calendar size={16} /> Book an Appointment
               </button>
               
               <div className="mobile-drawer-quick-links">
                 <a
-                  href={`tel:${THESANITAS_NURSE_INFO.phones[0].link}`}
+                  href={`tel:${DHERM_HEALTH_INFO.phones[0].link}`}
                   className="btn btn-outline"
                   style={{ flex: 1 }}
                 >
                   <Phone size={15} /> Call Direct
                 </a>
                 <a
-                  href={`https://wa.me/${THESANITAS_NURSE_INFO.whatsappNumber}?text=${encodeURIComponent(THESANITAS_NURSE_INFO.whatsappPrefill)}`}
+                  href={`https://wa.me/${DHERM_HEALTH_INFO.whatsappNumber}?text=${encodeURIComponent(DHERM_HEALTH_INFO.whatsappPrefill)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn"
-                  style={{ flex: 1, background: '#25d366', color: 'white', border: 'none' }}
+                  className="btn btn-whatsapp"
+                  style={{ flex: 1 }}
                 >
                   <MessageSquare size={15} /> WhatsApp
                 </a>
               </div>
 
               <div className="mobile-drawer-contact-note">
-                Available 24/7 for urgent patient care & consultation
+                {DHERM_HEALTH_INFO.motto} · Direct Line: {DHERM_HEALTH_INFO.phone}
               </div>
             </div>
           </div>

@@ -1,225 +1,298 @@
 export interface HomeNursingServiceItem {
   id: string;
   title: string;
-  category: 'ambulant' | 'non-ambulant' | 'specialized' | 'maternal';
+  category: 'consultation' | 'monitoring' | 'wound' | 'maternal' | 'education' | 'home-visit';
   categoryLabel: string;
   shortDesc: string;
   fullDesc: string;
   features: string[];
   suitableFor: string[];
   duration: string;
+  iconName: string;
 }
 
-export const THESANITAS_NURSE_INFO = {
-  name: "TheSanitasNurse",
-  nurseName: "Nurse Adaeze Okonkwo (RN, RM)",
-  title: "Licensed Private Registered Nurse & Midwife",
-  tagline: "Dedicated Hospital-Grade Clinical Care in the Comfort of Your Home in Ibadan",
-  shortBio: "I am a fully licensed Registered Nurse and Midwife (NMCN) based in Ibadan, Oyo State. I provide dedicated one-on-one private home nursing care across Bodija, Oluyole, Jericho, Ring Road, Akobo, Iyaganku GRA, and surrounding areas. Always the same trusted nurse every visit.",
-  phones: [
-    { label: "Direct Phone Line", number: "0708 685 6431", link: "+2347086856431" },
-    { label: "Secondary Line", number: "0806 363 6237", link: "+2348063636237" },
-    { label: "Direct Emergency Triage", number: "+234 708 685 6431", link: "+2347086856431" }
+export const DHERM_HEALTH_INFO = {
+  name: "DHERMHEALTCONNET",
+  displayName: "DhermHealthConnect",
+  motto: "Bringing Professional Care to Your Doorstep.",
+  nurseName: "Adeyemi Damilola Mary",
+  nurseQualifications: "RN, RM, BLS, BNSc",
+  title: "Registered Nurse & Registered Midwife",
+  tagline: "Compassionate, Professional Nursing Care — Wherever You Are.",
+  shortBio: "I'm a Registered Nurse and Midwife with clinical training across pediatric, medical-surgical, emergency, and psychiatric nursing settings. My background includes hands-on experience in maternal and child health, immunization and growth monitoring, wound care, and patient education — with a particular passion for community health awareness and holistic, compassionate patient care.",
+  careApproach: "I believe good nursing care goes beyond treatment — it's about listening, educating, and making patients and their families feel supported every step of the way, whether that's in a hospital ward or the comfort of their own home.",
+  areasOfExpertise: [
+    { title: "Pediatric & Maternal-Child Health", desc: "Comprehensive infant wellness, developmental monitoring, immunization oversight, and dedicated post-delivery maternal recovery." },
+    { title: "Emergency Response & Triage", desc: "Rapid clinical assessment, vital sign stabilization, acute symptom escalation, and emergency patient guidance." },
+    { title: "Wound Care & IV Management", desc: "Hospital-standard aseptic dressings, post-operative surgical care, diabetic ulcer management, and sterile infusion protocols." },
+    { title: "Patient Education & Counseling", desc: "Empowering individuals and families with disease self-management, nutritional guidance, and clear medical coaching." },
+    { title: "Infection Control & Safety Standards", desc: "Strict sterile protocols, cross-contamination prevention, and safe home healthcare environment optimization." }
   ],
-  phone: "0708 685 6431",
-  phoneFormatted: "0708 685 6431 / 0806 363 6237",
-  whatsappNumber: "2347086856431",
-  whatsappPrefill: "Hello Nurse Adaeze! I would like to inquire about booking private home nursing care in Ibadan for a family member.",
-  email: "care@thesanitasnurse.com",
-  secondaryEmail: "nurse@thesanitasnurse.com",
-  googleBookingFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc7zExampleFormLinkNursingCare2026/viewform?usp=sf_link",
-  googleIntakeFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc7zExamplePatientIntakeForm2026/viewform?usp=sf_link",
+  phones: [
+    { label: "Direct Phone Line", number: "0706 395 8561", link: "+2347063958561" },
+    { label: "Emergency & WhatsApp Triage", number: "0706 395 8561", link: "+2347063958561" }
+  ],
+  phone: "0706 395 8561",
+  phoneFormatted: "0706 395 8561",
+  whatsappNumber: "2347063958561",
+  whatsappPrefill: "Hello Nurse Adeyemi Damilola Mary! I would like to inquire about booking professional nursing care through DhermHealthConnect.",
+  email: "akintundeolukunla@gmail.com",
   locations: [
     {
-      name: "Ibadan Central Practice Hub",
-      address: "Bodija / Secretariat Axis, Ibadan, Oyo State"
+      name: "Primary Clinical Outreach",
+      address: "Direct In-Home Care & Virtual Consultations Nationwide"
     },
     {
-      name: "South-West Dispatch Base",
-      address: "Ring Road / Oluyole Estate, Ibadan, Oyo State"
-    },
-    {
-      name: "Jericho & Iyaganku Coverage",
-      address: "Jericho GRA, Iyaganku & Alalubosa, Ibadan, Oyo State"
+      name: "Private Bedside Dispatch",
+      address: "Scheduled In-Home Visits & Nursing Support"
     }
   ],
   stats: [
-    { value: "100%", label: "Direct 1-on-1 Care Continuity (Always Nurse Adaeze)" },
-    { value: "8+ Yrs", label: "Clinical & Hospital Nursing Experience" },
-    { value: "NMCN", label: "Dual Certified Registered Nurse & Midwife" },
-    { value: "500+", label: "Successful Private Home Visits in Ibadan & Beyond" }
+    { value: "RN & RM", label: "Dual Certified Nurse & Midwife (BLS, BNSc)" },
+    { value: "Since 2020", label: "Hospital & Community Clinical Exposure" },
+    { value: "100%", label: "Personalized 1-on-1 Patient Continuity" },
+    { value: "24/7", label: "Responsive Patient Support & Virtual Triage" }
   ]
 };
 
-export const AVON_HOME_NURSING_INFO = THESANITAS_NURSE_INFO;
+// Aliases for backwards compatibility
+export const THESANITAS_NURSE_INFO = DHERM_HEALTH_INFO;
+export const AVON_HOME_NURSING_INFO = DHERM_HEALTH_INFO;
 
 export const HOME_NURSING_SERVICES: HomeNursingServiceItem[] = [
   {
-    id: "ambulant-home-care",
-    title: "Ambulant Patient Home Care",
-    category: "ambulant",
-    categoryLabel: "Mobile Patients",
-    shortDesc: "Routine vital signs checks, medication administration, chronic disease management, and clinical supervision for mobile patients in Ibadan.",
-    fullDesc: "I provide regular in-home visits for mobile individuals across Ibadan requiring professional medical supervision. From tracking hypertension and diabetes to managing prescription schedules and clinical wound inspections, I ensure your loved one remains healthy and safe at home.",
+    id: "online-nursing-consultation",
+    title: "Online Nursing Consultation",
+    category: "consultation",
+    categoryLabel: "Virtual Care",
+    shortDesc: "Convenient, private virtual clinical consultations for symptom assessment, triage, recovery check-ins, and health guidance.",
+    fullDesc: "Access professional nursing insight wherever you are. Through secure video or voice consultations, get immediate clinical guidance, recovery assessments, lab test review discussions, and clear next steps for your health concerns without leaving home.",
     features: [
-      "Vital signs monitoring & clinical logging (BP, Pulse, Blood Sugar, SpO2)",
-      "Medication management, injection administration & compliance reviews",
-      "Sterile wound inspection & minor dressing changes",
-      "Dietary & lifestyle guidance tailored to Nigerian diets",
-      "Direct WhatsApp clinical reports sent to family after each visit"
+      "Real-time vital symptom assessment and clinical triage",
+      "Post-discharge recovery check-ins and recovery milestone tracking",
+      "Second opinions on daily care routines and recovery protocols",
+      "Direct digital summary and personalized care recommendations",
+      "Immediate escalation guidance for urgent conditions"
     ],
     suitableFor: [
-      "Elderly individuals living in Ibadan",
-      "Hypertensive and diabetic patients needing regular monitoring",
-      "Patients recovering from illness who require check-ups"
+      "Patients needing quick clinical advice without clinic commutes",
+      "Families seeking professional guidance for managing sick relatives",
+      "Individuals recovering at home who require ongoing check-ins"
     ],
-    duration: "1 to 3 hours per visit, or scheduled weekly routines"
+    duration: "30 to 45 minutes per consultation session",
+    iconName: "stethoscope"
   },
   {
-    id: "non-ambulant-bedridden-care",
-    title: "Bedridden & Immobility Nursing",
-    category: "non-ambulant",
-    categoryLabel: "Bedridden Care",
-    shortDesc: "Intensive 1-on-1 bedside nursing, pressure ulcer prevention, assisted mobility, and clinical hygiene for bed-bound individuals.",
-    fullDesc: "Comprehensive clinical care for bed-bound patients recovering from stroke, spinal injuries, or major surgery in Ibadan. I manage every aspect of bedside nursing — from strict 2-hour repositioning schedules and skin barrier care to catheter maintenance and passive range-of-motion physiotherapy support.",
+    id: "health-education",
+    title: "Health Education & Lifestyle Coaching",
+    category: "education",
+    categoryLabel: "Wellness & Prevention",
+    shortDesc: "Empowering patients and families with actionable health literacy, disease prevention strategies, and healthy lifestyle routines.",
+    fullDesc: "Knowledge is the cornerstone of lasting health. We provide structured education sessions tailored to your lifestyle, focusing on chronic disease prevention, nutrition, wellness preservation, and practical family caregiver training.",
     features: [
-      "Pressure ulcer (bedsore) prevention, staging & sterile dressing",
-      "Urinary catheter management, care & sterile hygiene",
-      "Assisted bed bathing, skin moisturization & barrier protection",
-      "Passive limb exercises & assisted transfer to wheelchair",
-      "Full daily clinical logs and physician collaboration"
+      "Customized health literacy and wellness roadmaps",
+      "Practical family caregiver training and safety coaching",
+      "Nutritional guidance adapted to traditional African diets",
+      "Hygiene, infection prevention, and sanitation best practices",
+      "Holistic wellness coaching for all age groups"
     ],
     suitableFor: [
-      "Stroke survivors with partial or total paralysis",
-      "Post-orthopedic surgery recovery patients",
-      "Frail elderly patients with severe mobility constraints"
+      "Families managing home care for elderly or recovering relatives",
+      "Individuals seeking proactive health and lifestyle optimization",
+      "Community groups and corporate wellness programs"
     ],
-    duration: "Half-day (4–6 hours), full-day (8–12 hours), or dedicated scheduled shifts"
+    duration: "45 to 60 minute interactive coaching sessions",
+    iconName: "heart-pulse"
   },
   {
-    id: "wound-care-surgical-dressing",
-    title: "Clinical Wound Care & Dressing",
-    category: "specialized",
-    categoryLabel: "Specialized Nursing",
-    shortDesc: "Sterile wound management for post-surgical incisions, C-section wounds, diabetic foot ulcers, and trauma recovery in Ibadan.",
-    fullDesc: "Hospital-grade sterile wound care delivered at your bedside in Ibadan. Using advanced dressings, aseptic technique, and careful assessment, I accelerate tissue healing and prevent dangerous wound infections without the pain and stress of hospital commutes.",
+    id: "bp-diabetes-monitoring",
+    title: "Blood Pressure & Diabetes Monitoring",
+    category: "monitoring",
+    categoryLabel: "Chronic Disease",
+    shortDesc: "Routine blood pressure checks, blood glucose tracking, insulin administration guidance, and cardiovascular risk management.",
+    fullDesc: "Stay ahead of hypertension and diabetes complications with regular, accurate clinical tracking. We provide in-home or guided vitals monitoring, blood sugar logging, insulin administration support, and tailored dietary advice to keep readings stable.",
     features: [
-      "Aseptic dressing changes for C-section & abdominal surgeries",
-      "Diabetic foot ulcer cleaning, debridement & pressure relief",
-      "Infection surveillance (early detection of redness, warmth, dehiscence)",
-      "Suture & staple removal under physician orders",
-      "Photographic wound healing progress tracking for your doctor"
+      "Precise digital & manual blood pressure assessment and trend tracking",
+      "Fasting and random blood glucose testing with calibrated glucometers",
+      "Insulin injection technique training and site rotation coaching",
+      "Dietary sodium and carbohydrate management coaching",
+      "Structured clinical log sheets shared directly with your physician"
     ],
     suitableFor: [
-      "Post-operative patients recently discharged from hospital (UCH, private hospitals in Ibadan)",
-      "Diabetic patients with slow-healing foot wounds or ulcers",
-      "Mothers recovering from Caesarean section deliveries"
+      "Hypertensive and diabetic patients needing consistent monitoring",
+      "Elderly individuals who struggle with home monitoring devices",
+      "Patients undergoing medication adjustments"
     ],
-    duration: "Single visits or alternate-day wound dressing schedules"
+    duration: "45 minutes per visit or scheduled regular routines",
+    iconName: "activity"
   },
   {
-    id: "elderly-geriatric-dementia-care",
-    title: "Elderly & Dementia Home Support",
-    category: "specialized",
-    categoryLabel: "Geriatric Support",
-    shortDesc: "Compassionate, patient-centered nursing for elderly parents in Ibadan, cognitive impairment support, and respite for family caregivers.",
-    fullDesc: "Caring for an aging parent in Ibadan requires clinical vigilance paired with deep patience and warmth. I provide structured daily routines, cognitive stimulation, fall prevention measures, and gentle medication oversight so your elderly parent can age gracefully in their familiar surroundings.",
+    id: "wound-care-guidance",
+    title: "Wound Care Guidance & Dressing",
+    category: "wound",
+    categoryLabel: "Specialized Care",
+    shortDesc: "Hospital-grade sterile dressing, surgical incision care, diabetic foot ulcer management, and infection surveillance.",
+    fullDesc: "Accelerate healing and prevent dangerous complications with skilled wound management. Utilizing aseptic techniques and modern dressing materials, we provide sterile cleaning, dressing changes, and ongoing healing assessment in the comfort of your home.",
     features: [
-      "Morning & evening medication administration and compliance checks",
-      "Fall risk assessment & home safety environment optimization",
-      "Cognitive engagement, memory routines & calm dementia support",
-      "Nutritional intake tracking and hydration encouragement",
-      "Reliable respite for family caregivers balancing work and care"
+      "Strict aseptic dressing changes for surgical incisions and C-sections",
+      "Diabetic foot ulcer cleaning, debridement oversight, and pressure relief",
+      "Early infection surveillance (redness, exudate, temperature, swelling)",
+      "Suture and staple removal under medical orders",
+      "Photo progress logs documenting wound granulation and healing"
     ],
     suitableFor: [
-      "Elderly parents in Ibadan needing daily clinical oversight",
-      "Individuals with early-to-moderate dementia or Alzheimer's",
-      "Families needing trusted care while at work or living abroad"
+      "Post-operative patients discharged after surgical procedures",
+      "Mothers healing from Caesarean section incisions",
+      "Individuals with chronic, slow-healing wounds or diabetic ulcers"
     ],
-    duration: "Regular daily visits, weekly plans, or continuous care schedules"
+    duration: "45 to 60 minutes per dressing session",
+    iconName: "bandage"
   },
   {
-    id: "antenatal-postnatal-mother-baby-care",
-    title: "Postnatal & Newborn Care (RN/RM)",
+    id: "medication-education",
+    title: "Medication Education & Adherence",
+    category: "education",
+    categoryLabel: "Pharmacology & Safety",
+    shortDesc: "Prescription schedule organization, side-effect awareness, safe injection practices, and compliance coaching.",
+    fullDesc: "Prevent drug interactions, missed doses, and medication errors. We help organize daily pill regimens, explain drug indications and potential side effects in plain language, and coach safe administration techniques for injections and specialty medications.",
+    features: [
+      "Comprehensive prescription review and organizer setup",
+      "Instruction on oral, subcutaneous, and intramuscular administration",
+      "Side effect identification and contraindication checks",
+      "Pill dispenser scheduling to eliminate missed or double dosing",
+      "Storage requirements guidance (e.g. insulin and biologic refrigeration)"
+    ],
+    suitableFor: [
+      "Patients taking multiple daily medications (polypharmacy)",
+      "Caregivers needing clarity on complex drug schedules",
+      "Patients self-administering insulin or anticoagulant injections"
+    ],
+    duration: "40 to 60 minutes per education session",
+    iconName: "pill"
+  },
+  {
+    id: "antenatal-postnatal-support",
+    title: "Antenatal & Postnatal Support",
     category: "maternal",
-    categoryLabel: "Mother & Baby",
-    shortDesc: "Midwife-led in-home postnatal recovery, C-section incision care, lactation support, and newborn health monitoring across Ibadan.",
-    fullDesc: "As a dual-certified Registered Midwife and Nurse based in Ibadan, I provide hands-on post-delivery support right at your home during the critical first 6 weeks. I care for both mother and newborn — ensuring smooth recovery, confident breastfeeding, and peace of mind.",
+    categoryLabel: "Maternal & Child",
+    shortDesc: "Midwife-led maternal health guidance, postpartum recovery, C-section care, newborn cord care, and lactation coaching.",
+    fullDesc: "Expert, compassionate maternal care led by a certified Registered Midwife. From pregnancy wellness education to post-delivery home care, lactation assistance, and newborn health checks, we support mother and baby through every milestone of early parenthood.",
     features: [
-      "C-section wound assessment, sterile cleaning and dressing",
-      "Lactation support: proper latch techniques & engorgement relief",
-      "Newborn health checks: cord care, weight tracking & jaundice check",
-      "Postpartum recovery guidance & maternal emotional well-being checks",
-      "Safe newborn bathing, soothing techniques & thermal care"
+      "Midwife-led post-delivery maternal recovery assessment and incision care",
+      "Lactation support: latching techniques, engorgement relief, and pumping",
+      "Newborn wellness checks: umbilical cord care, jaundice check, and weight",
+      "Antenatal birth preparation and early labor warning sign guidance",
+      "Postpartum emotional well-being check-ins and family reassurance"
     ],
     suitableFor: [
-      "New mothers recovering from Caesarean or vaginal delivery in Ibadan",
-      "First-time mothers needing hands-on newborn guidance",
-      "Mothers experiencing breastfeeding challenges or sore incisions"
+      "Expectant mothers seeking antenatal education and reassurance",
+      "Postpartum mothers recovering from vaginal or C-section birth",
+      "First-time parents needing hands-on newborn care guidance"
     ],
-    duration: "Single check-up visits, 2-week intensive, or 6-week fourth-trimester plans"
+    duration: "60 to 90 minutes per maternal visit",
+    iconName: "baby"
   },
   {
-    id: "health-education-chronic-disease",
-    title: "Chronic Disease Coaching & Education",
-    category: "specialized",
-    categoryLabel: "Health Education",
-    shortDesc: "One-on-one health coaching for hypertension, diabetes, stroke prevention, and adapting traditional Nigerian diets.",
-    fullDesc: "Empowering patients and families with actionable medical knowledge in Ibadan. I teach practical self-management skills — from correct insulin injection techniques and blood pressure logging to culturally tailored meal adjustments that protect your cardiovascular health.",
+    id: "home-nursing-visits",
+    title: "Home Nursing Visits",
+    category: "home-visit",
+    categoryLabel: "Bedside Care",
+    shortDesc: "Dedicated in-home clinical nursing, vital signs monitoring, bedside hygiene, convalescence care, and elderly support.",
+    fullDesc: "Receive attentive, hospital-standard clinical nursing directly at your doorstep. We provide comprehensive bedside care, assisted mobility, hygiene support, vital signs surveillance, and compassionate companionship for patients recovering at home or aging in place.",
     features: [
-      "Instruction on home glucometer & digital BP monitor operation",
-      "Insulin injection training, storage rules & rotation techniques",
-      "Nigerian dietary coaching: reducing sodium & balancing carbs",
-      "Emergency red-flag training for family members and domestic staff",
-      "Medication organization with pill planners to eliminate missed doses"
+      "Complete vital signs assessment, logging, and health checks",
+      "Assisted mobility, repositioning to prevent bedsores, and safe transfers",
+      "Bedside hygiene support and skin barrier protection",
+      "Medication administration and clinical treatment implementation",
+      "Direct regular updates and progress reports shared with family members"
     ],
     suitableFor: [
-      "Newly diagnosed diabetic or hypertensive patients in Ibadan",
-      "Family members and caregivers managing a loved one's treatment",
-      "Individuals seeking to prevent cardiovascular complications"
+      "Elderly family members requiring attentive daily or weekly support",
+      "Patients recovering from major illness, stroke, or surgery at home",
+      "Busy families needing trusted, professional nursing continuity"
     ],
-    duration: "Dedicated 1-on-1 coaching sessions or integrated with regular visits"
+    duration: "Flexible visit blocks (2–4 hours) or scheduled recurring routines",
+    iconName: "home"
   }
 ];
 
 export const SERVICE_AREAS_DATA = [
   {
-    region: "Ibadan North & Bodija Axis",
-    areas: "Old Bodija, New Bodija, Agodi GRA, Ikolaba, Samonda, UI / UCH Axis, Sango",
-    responseTime: "Rapid response & immediate home visits",
-    availability: "7 days a week (Morning, Afternoon & Night Shifts)"
+    region: "Metropolitan Coverage & Urban Centers",
+    areas: "City-wide residential neighborhoods, estates, and urban districts",
+    responseTime: "Rapid response & flexible morning/afternoon scheduled visits",
+    availability: "7 days a week (Morning, Afternoon & Dedicated Shifts)"
   },
   {
-    region: "Ibadan South-West & Oluyole Hub",
-    areas: "Oluyole Estate, Ring Road, Iyaganku GRA, Alalubosa GRA, Challenge, Liberty Road",
-    responseTime: "Scheduled & same-day emergency visits",
-    availability: "7 days a week (Flexible shift hours)"
+    region: "Residential Communities & Suburbs",
+    areas: "Suburban zones, family estates, and extended community areas",
+    responseTime: "Pre-arranged scheduled appointments and recurring plans",
+    availability: "7 days a week (Flexible scheduling)"
   },
   {
-    region: "Ibadan North-West & East / Extension",
-    areas: "Jericho GRA, Eleyele, Dugbe, Onireke, Akobo, Ojoo, Moniya, Ologuneru",
-    responseTime: "Scheduled in-home care & intensive blocks",
-    availability: "7 days a week (Pre-arranged bookings)"
+    region: "Nationwide Online Consultations",
+    areas: "Available to patients and families anywhere via secure video & audio",
+    responseTime: "Same-day booking & scheduled virtual appointments",
+    availability: "Monday to Sunday (Flexible hours)"
   }
 ];
 
 export const WORKING_HOURS_DATA = [
   {
-    service: "Private In-Home Visits (Morning / Afternoon)",
+    service: "Home Nursing Visits (Day Shifts)",
     hours: "7:00 AM – 6:00 PM",
     days: "Monday – Sunday",
-    note: "Flexible arrival times across all Ibadan zones"
+    note: "Flexible arrival times tailored to patient routine"
   },
   {
-    service: "Overnight & Dedicated Shift Nursing",
-    hours: "7:00 PM – 7:00 AM (12-Hour Blocks)",
-    days: "By Prior Booking",
-    note: "Continuous bedside monitoring in your Ibadan home"
+    service: "Online Nursing Consultations & Telehealth",
+    hours: "8:00 AM – 9:00 PM",
+    days: "Monday – Sunday",
+    note: "Secure video or phone appointments"
   },
   {
-    service: "Direct Phone & WhatsApp Triage Line",
+    service: "Direct WhatsApp & Phone Line",
     hours: "24 Hours / 7 Days",
-    days: "Round-the-clock Availability",
-    note: "Direct communication with Nurse Adaeze for urgent inquiries in Ibadan"
+    days: "Round-the-clock Triage",
+    note: "Direct communication on 0706 395 8561"
+  }
+];
+
+export const TESTIMONIALS_DATA = [
+  {
+    id: "test-1",
+    quote: "Nurse Damilola provided exemplary post-operative wound care and vitals monitoring for my mother. Her professionalism, hygiene, and calm demeanor gave our entire family peace of mind.",
+    author: "Mrs. Folashade A.",
+    relationship: "Daughter of Care Recipient",
+    location: "Home Nursing & Wound Care",
+    rating: 5,
+    date: "Recent Patient Review"
+  },
+  {
+    id: "test-2",
+    quote: "The virtual consultation and antenatal coaching were so thorough. She listened attentively, answered every single concern about my newborn, and guided us through umbilical cord care step by step.",
+    author: "Blessing & Emmanuel O.",
+    relationship: "First-time Parents",
+    location: "Antenatal & Postnatal Support",
+    rating: 5,
+    date: "Recent Client"
+  },
+  {
+    id: "test-3",
+    quote: "Managing my father's hypertension and diabetes had become overwhelming until Nurse Adeyemi stepped in with regular BP checks, blood sugar logs, and dietary advice. Highly recommended!",
+    author: "Dr. K. Babatunde",
+    relationship: "Family Representative",
+    location: "Chronic Condition Monitoring",
+    rating: 5,
+    date: "Verified Family Review"
+  },
+  {
+    id: "test-4",
+    quote: "Her bedside manner is extraordinary. Having a licensed nurse and midwife come straight to our home made my grandmother's recovery after discharge smooth and stress-free.",
+    author: "Chukwudi N.",
+    relationship: "Grandson of Patient",
+    location: "Bedside Home Care",
+    rating: 5,
+    date: "Verified Review"
   }
 ];

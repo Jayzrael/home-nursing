@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { X, CheckCircle, User, Phone, Mail, FileText, ExternalLink, MessageSquare } from 'lucide-react';
-import { AVON_HOME_NURSING_INFO } from '../data/nursingData';
+import { X, CheckCircle, User, Phone, Mail, FileText, MessageSquare } from 'lucide-react';
+import { DHERM_HEALTH_INFO } from '../data/nursingData';
 
 interface IntakeModalProps {
   onClose: () => void;
@@ -36,11 +36,10 @@ export function IntakeModal({ onClose }: IntakeModalProps) {
 
         {!submitted ? (
           <div className="modal-inner">
-            <div className="section-badge" style={{ marginBottom: '0.75rem' }}>Patient Intake Form</div>
-            <h2 className="modal-title">Patient Medical Intake</h2>
+            <div className="section-badge" style={{ marginBottom: '0.75rem' }}>Secure Patient Intake</div>
+            <h2 className="modal-title">Patient Medical Intake Form</h2>
             <p className="modal-subtitle">
-              Please provide accurate information so I can review your patient's medical history and prepare a tailored care plan.
-              Your information is strictly confidential.
+              Please provide accurate health background so Nurse Adeyemi can review clinical history and structure an individualized care plan. Your details are strictly confidential.
             </p>
 
             <form onSubmit={handleSubmit}>
@@ -65,35 +64,35 @@ export function IntakeModal({ onClose }: IntakeModalProps) {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label className="form-label"><Phone size={14} /> Patient / Caregiver Phone *</label>
-                  <input type="tel" required className="form-input" placeholder="+234 807 000 0000" value={form.phone} onChange={e => set('phone', e.target.value)} />
+                  <label className="form-label"><Phone size={14} /> Contact Phone / WhatsApp *</label>
+                  <input type="tel" required className="form-input" placeholder="0706 395 8561" value={form.phone} onChange={e => set('phone', e.target.value)} />
                 </div>
               </div>
 
               <div className="form-row-2">
                 <div className="form-group">
                   <label className="form-label"><Mail size={14} /> Email Address</label>
-                  <input type="email" className="form-input" placeholder="email@example.com" value={form.email} onChange={e => set('email', e.target.value)} />
+                  <input type="email" className="form-input" placeholder="name@example.com" value={form.email} onChange={e => set('email', e.target.value)} />
                 </div>
                 <div className="form-group">
-                  <label className="form-label">Home Address (for nurse dispatch) *</label>
-                  <input type="text" required className="form-input" placeholder="Street, City, State" value={form.address} onChange={e => set('address', e.target.value)} />
+                  <label className="form-label">Care Address (for nurse visit) *</label>
+                  <input type="text" required className="form-input" placeholder="House number, Street, City / Area" value={form.address} onChange={e => set('address', e.target.value)} />
                 </div>
               </div>
 
               <div className="form-group">
-                <label className="form-label"><FileText size={14} /> Medical Condition / Reason for Home Nursing *</label>
-                <textarea required className="form-input" rows={3} placeholder="Describe the patient's diagnosis, symptoms, mobility level, and what care is needed (e.g. 'Stroke survivor, right-sided weakness, needs wound dressing and passive exercises')..." value={form.condition} onChange={e => set('condition', e.target.value)} style={{ resize: 'vertical' }} />
+                <label className="form-label"><FileText size={14} /> Medical Condition / Reason for Nursing Care *</label>
+                <textarea required className="form-input" rows={3} placeholder="Describe the patient's diagnosis, current symptoms, wound status, mobility level, or maternal needs..." value={form.condition} onChange={e => set('condition', e.target.value)} style={{ resize: 'vertical' }} />
               </div>
 
               <div className="form-row-2">
                 <div className="form-group">
                   <label className="form-label">Known Allergies (drugs, food, latex)</label>
-                  <input type="text" className="form-input" placeholder="e.g. Penicillin, NSAIDS — or 'None known'" value={form.allergies} onChange={e => set('allergies', e.target.value)} />
+                  <input type="text" className="form-input" placeholder="e.g. Penicillin, Sulfa — or 'None known'" value={form.allergies} onChange={e => set('allergies', e.target.value)} />
                 </div>
                 <div className="form-group">
-                  <label className="form-label">Current Medications</label>
-                  <input type="text" className="form-input" placeholder="List drugs and doses or 'None'" value={form.medications} onChange={e => set('medications', e.target.value)} />
+                  <label className="form-label">Current Medications & Dosages</label>
+                  <input type="text" className="form-input" placeholder="List prescribed drugs or 'None'" value={form.medications} onChange={e => set('medications', e.target.value)} />
                 </div>
               </div>
 
@@ -104,20 +103,13 @@ export function IntakeModal({ onClose }: IntakeModalProps) {
                 </div>
                 <div className="form-group">
                   <label className="form-label">Emergency Contact Phone *</label>
-                  <input type="tel" required className="form-input" placeholder="+234 800 000 0000" value={form.emergencyPhone} onChange={e => set('emergencyPhone', e.target.value)} />
+                  <input type="tel" required className="form-input" placeholder="0706 000 0000" value={form.emergencyPhone} onChange={e => set('emergencyPhone', e.target.value)} />
                 </div>
               </div>
 
               <button type="submit" className="btn btn-primary" style={{ width: '100%', marginBottom: '0.75rem' }}>
                 Submit Patient Intake Form
               </button>
-
-              <div className="form-google-link">
-                <span>Or fill via Google Forms:&nbsp;</span>
-                <a href={AVON_HOME_NURSING_INFO.googleIntakeFormUrl} target="_blank" rel="noopener noreferrer">
-                  Open intake form <ExternalLink size={12} />
-                </a>
-              </div>
             </form>
           </div>
         ) : (
@@ -125,17 +117,15 @@ export function IntakeModal({ onClose }: IntakeModalProps) {
             <div className="form-success-icon"><CheckCircle size={36} /></div>
             <h3 className="form-success-title">Patient Intake Submitted!</h3>
             <p className="form-success-text">
-              Thank you for registering <strong>{form.patientName}</strong>. I will review the intake details and contact 
-              <strong> {form.phone}</strong> to confirm your personalized care plan and schedule the first visit.
+              Thank you for submitting clinical intake for <strong>{form.patientName}</strong>. Nurse Adeyemi will review these details and reach out to <strong>{form.phone}</strong> to confirm your tailored care schedule.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <button className="btn btn-primary" onClick={onClose}>Done</button>
               <a
-                href={`https://wa.me/${AVON_HOME_NURSING_INFO.whatsappNumber}?text=${encodeURIComponent(`Hello TheSanitasNurse, I just submitted a patient intake form for ${form.patientName}. Please confirm receipt.`)}`}
+                href={`https://wa.me/${DHERM_HEALTH_INFO.whatsappNumber}?text=${encodeURIComponent(`Hello Nurse Adeyemi, I just submitted a patient medical intake form for ${form.patientName}. Please confirm receipt.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn"
-                style={{ background: '#25d366', color: 'white', border: 'none' }}
+                className="btn btn-whatsapp"
               >
                 <MessageSquare size={16} /> Confirm on WhatsApp
               </a>

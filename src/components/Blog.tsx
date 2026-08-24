@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Search, Clock, X } from 'lucide-react';
+import { Search, Clock, X, Sparkles } from 'lucide-react';
 import { BLOG_POSTS, BLOG_CATEGORIES } from '../data/blogData';
 
 interface BlogProps {
@@ -23,11 +23,13 @@ export function Blog({ onSelectPost }: BlogProps) {
     <section id="blog" className="section-py blog-section">
       <div className="container">
         <div className="section-header-center">
-          <div className="section-badge">Health Education</div>
-          <h1 className="section-title">TheSanitasNurse Health & Wellness Blog</h1>
+          <div className="section-badge">
+            <Sparkles size={14} className="gold-accent-icon" />
+            <span>Patient Resources & Education</span>
+          </div>
+          <h1 className="section-title">Health Literacy & Wellness Guides</h1>
           <p className="section-subtitle">
-            Expert articles by our registered nurses and physicians covering elderly care,
-            wound management, maternal health, and chronic disease management in Nigeria.
+            Educational articles and clinical guides covering chronic illness self-care, wound management, maternal health, and family caregiving.
           </p>
         </div>
 
@@ -37,7 +39,7 @@ export function Blog({ onSelectPost }: BlogProps) {
             <Search size={17} color="var(--text-muted)" />
             <input
               type="text"
-              placeholder="Search articles: wound care, elderly, diabetes, pregnancy..."
+              placeholder="Search articles: wound care, blood pressure, diabetes, maternal..."
               className="blog-search-input"
               value={query}
               onChange={e => setQuery(e.target.value)}
@@ -62,7 +64,7 @@ export function Blog({ onSelectPost }: BlogProps) {
         </div>
 
         <p className="blog-results-count">
-          Showing <strong>{filtered.length}</strong> of <strong>{BLOG_POSTS.length}</strong> articles
+          Showing <strong>{filtered.length}</strong> of <strong>{BLOG_POSTS.length}</strong> resources
           {query && <> matching "<strong>{query}</strong>"</>}
         </p>
 
@@ -77,23 +79,11 @@ export function Blog({ onSelectPost }: BlogProps) {
                 tabIndex={0}
                 onKeyDown={e => e.key === 'Enter' && onSelectPost(post.slug)}
               >
-                <div className="blog-card-img-wrap">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="blog-card-img"
-                    loading="lazy"
-                  />
-                </div>
                 <div className="blog-card-body">
                   <span className="blog-card-cat">{post.category}</span>
                   <h2 className="blog-card-title">{post.title}</h2>
                   <p className="blog-card-excerpt">{post.excerpt}</p>
                   <div className="blog-card-footer">
-                    <div className="blog-card-author">
-                      <img src={post.author.avatar} alt={post.author.name} className="blog-author-avatar" loading="lazy" />
-                      <span className="blog-author-name">{post.author.name.split(' ').slice(-1)[0]}</span>
-                    </div>
                     <div className="blog-card-meta">
                       <Clock size={12} />
                       <span>{post.readTime}</span>
@@ -106,7 +96,7 @@ export function Blog({ onSelectPost }: BlogProps) {
         ) : (
           <div style={{ textAlign: 'center', padding: '4rem 1rem' }}>
             <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>
-              No articles found for <strong>"{query}"</strong> in <strong>{category}</strong>.
+              No resources found for <strong>"{query}"</strong> in <strong>{category}</strong>.
             </p>
             <button
               className="btn btn-outline btn-sm"

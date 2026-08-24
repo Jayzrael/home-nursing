@@ -36,8 +36,8 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'August 10, 2026',
     readTime: '7 min read',
     author: {
-      name: 'Nurse Adaeze Okonkwo',
-      role: 'Senior Home Care Registered Nurse (NMCN)',
+      name: 'Nurse Adeyemi Damilola Mary',
+      role: 'Registered Nurse & Midwife (RN, RM, BLS, BNSc)',
       avatar: '/images/nurse-bp-check.jpg'
     },
     excerpt: 'As Nigeria\'s population ages, more families find themselves caring for elderly parents at home. This guide provides practical, compassionate advice for Nigerian families on providing safe, dignified elderly home care.',

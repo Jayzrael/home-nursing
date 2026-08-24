@@ -1,13 +1,10 @@
-/**
- * TrustBar — Stats strip below hero for single nurse brand
- */
 export function TrustBar() {
   const stats = [
-    { value: '500+', label: 'Private Home Visits Completed' },
-    { value: 'RN / RM', label: 'NMCN Licensed Nurse & Midwife' },
-    { value: '8+ Years', label: 'Clinical Hospital & Home Experience' },
-    { value: '1-on-1', label: 'Guaranteed Dedicated Care Continuity' },
-    { value: '24/7', label: 'Direct Family WhatsApp Line' },
+    { value: 'RN, RM', label: 'Dual Certified Nurse & Midwife' },
+    { value: 'BLS & BNSc', label: 'Basic Life Support & Nursing Science' },
+    { value: 'Since 2020', label: 'Clinical Training & Healthcare Exposure' },
+    { value: '1-on-1', label: 'Personalized Care Continuity (Zero Strangers)' },
+    { value: '24/7', label: 'Direct WhatsApp Line & Rapid Triage' },
   ];
 
   return (
