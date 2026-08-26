@@ -25,7 +25,7 @@ import {
 } from 'lucide-react';
 import { DHERM_HEALTH_INFO, HOME_NURSING_SERVICES } from '../data/nursingData';
 
-const WEB3FORMS_ACCESS_KEY = '571f8847-7db0-4103-af50-d7c2756a91b5';
+const WEB3FORMS_ACCESS_KEY = '4a3935f1-948a-4211-a4b4-c85ab886a291';
 
 interface BookingModalProps {
   onClose: () => void;
@@ -136,7 +136,7 @@ export function BookingModal({ onClose, initialServiceId }: BookingModalProps) {
     }
   };
 
-  const whatsappConfirmationText = `Hello Nurse Adeyemi Damilola Mary! I have booked an appointment through DhermHealthConnect.%0A%0A*Service:* ${formData.serviceTitle}%0A*Date:* ${formData.date}%0A*Time:* ${formData.timeSlot}%0A*Patient:* ${formData.patientName}%0A*Contact:* ${formData.phone}%0A*Location:* ${formData.address || 'In-Home Visit'}%0A*Notes:* ${formData.clinicalNotes || 'None'}`;
+  const whatsappConfirmationText = `Hello Nurse Emmanuel Damilola Mary! I have booked an appointment through DhermHealthConnect.%0A%0A*Service:* ${formData.serviceTitle}%0A*Date:* ${formData.date}%0A*Time:* ${formData.timeSlot}%0A*Patient:* ${formData.patientName}%0A*Contact:* ${formData.phone}%0A*Location:* ${formData.address || 'In-Home Visit'}%0A*Notes:* ${formData.clinicalNotes || 'None'}`;
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -402,7 +402,7 @@ export function BookingModal({ onClose, initialServiceId }: BookingModalProps) {
             </div>
             <h3 className="form-success-title">Appointment Request Confirmed!</h3>
             <p className="form-success-text">
-              Thank you, <strong>{formData.patientName || 'Patient'}</strong>. Your appointment request for <strong>{formData.serviceTitle}</strong> has been sent. Nurse Adeyemi will reach out to confirm your visit.
+              Thank you, <strong>{formData.patientName || 'Patient'}</strong>. Your appointment request for <strong>{formData.serviceTitle}</strong> has been sent. Nurse Emmanuel Damilola Mary will reach out to confirm your visit.
             </p>
 
             {/* Receipt Summary Card */}
@@ -434,7 +434,7 @@ export function BookingModal({ onClose, initialServiceId }: BookingModalProps) {
             </div>
 
             <p className="confirmation-sub-note">
-              Your booking details have been sent to Nurse Adeyemi's inbox. You can also send an instant WhatsApp message below for immediate acknowledgement.
+              Your booking details have been sent to Nurse Emmanuel Damilola Mary's inbox. You can also send an instant WhatsApp message below for immediate acknowledgement.
             </p>
 
             {/* Action Buttons */}

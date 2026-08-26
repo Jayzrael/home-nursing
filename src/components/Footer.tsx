@@ -17,11 +17,11 @@ export function Footer({ onNavigate, onOpenPrivacy, onOpenTerms }: FooterProps) 
     <footer className="footer">
       <div className="container">
         <div className="footer-grid">
-          
+
           {/* Brand Col */}
           <div className="footer-brand-col">
-            <div 
-              style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '0.75rem', cursor: 'pointer' }} 
+            <div
+              style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '0.75rem', cursor: 'pointer' }}
               onClick={() => nav('home')}
             >
               <div className="logo-icon">
@@ -32,7 +32,7 @@ export function Footer({ onNavigate, onOpenPrivacy, onOpenTerms }: FooterProps) 
                 <div className="footer-brand-sub">{DHERM_HEALTH_INFO.nurseName} ({DHERM_HEALTH_INFO.nurseQualifications})</div>
               </div>
             </div>
-            
+
             <p className="footer-bio">
               {DHERM_HEALTH_INFO.motto} Bringing hospital-grade clinical nursing care, chronic condition monitoring, and midwife-led maternal support straight to your home.
             </p>
@@ -68,7 +68,7 @@ export function Footer({ onNavigate, onOpenPrivacy, onOpenTerms }: FooterProps) 
             <div className="footer-col-title">Quick Links</div>
             <ul className="footer-links-list">
               <li><button className="footer-link-btn" onClick={() => nav('home')}>Home</button></li>
-              <li><button className="footer-link-btn" onClick={() => nav('about')}>About Nurse Adeyemi</button></li>
+              <li><button className="footer-link-btn" onClick={() => nav('about')}>About Nurse Emmanuel Damilola Mary</button></li>
               <li><button className="footer-link-btn" onClick={() => nav('services')}>All Services</button></li>
               <li><button className="footer-link-btn" onClick={() => nav('blog')}>Patient Resources</button></li>
               <li><button className="footer-link-btn" onClick={() => nav('contact')}>Contact</button></li>
@@ -80,7 +80,7 @@ export function Footer({ onNavigate, onOpenPrivacy, onOpenTerms }: FooterProps) 
           {/* Direct Contact */}
           <div>
             <div className="footer-col-title">Contact & Inquiries</div>
-            
+
             <div className="footer-contact-item">
               <Phone size={15} className="footer-contact-icon" />
               <a href={`tel:${DHERM_HEALTH_INFO.phones[0].link}`}>
@@ -119,9 +119,9 @@ export function Footer({ onNavigate, onOpenPrivacy, onOpenTerms }: FooterProps) 
             <button className="footer-link-btn" onClick={onOpenTerms}>Terms of Service</button>
             <span className="footer-dot-sep">·</span>
             <button className="footer-link-btn" onClick={() => nav('contact')}>Contact Information</button>
-            <button 
-              className="footer-scroll-top" 
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+            <button
+              className="footer-scroll-top"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               title="Back to top"
             >
               <ArrowUp size={16} />

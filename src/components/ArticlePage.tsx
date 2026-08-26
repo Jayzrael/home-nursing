@@ -86,7 +86,7 @@ export function ArticlePage({ slug, onBack, onSelectPost, onOpenBooking }: Artic
 
   const handleShare = () => {
     if (navigator.share) {
-      navigator.share({ title: post.title, url: window.location.href }).catch(() => {});
+      navigator.share({ title: post.title, url: window.location.href }).catch(() => { });
     } else {
       navigator.clipboard.writeText(window.location.href);
       alert('Article link copied to clipboard!');
@@ -148,14 +148,14 @@ export function ArticlePage({ slug, onBack, onSelectPost, onOpenBooking }: Artic
                 Need Professional Home Nursing Care?
               </h3>
               <p style={{ opacity: 0.9, marginBottom: '1.25rem', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                Book dedicated hospital-grade home nursing or schedule an online consultation with Nurse Adeyemi Damilola Mary (RN, RM, BLS, BNSc).
+                Book dedicated hospital-grade home nursing or schedule an online consultation with Nurse Emmanuel Damilola Mary (RN, RM, BLS, BNSc).
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                 <button className="btn btn-gold" onClick={onOpenBooking}>
                   <Calendar size={16} /> Book an Appointment
                 </button>
                 <a
-                  href={`https://wa.me/${DHERM_HEALTH_INFO.whatsappNumber}?text=${encodeURIComponent('Hello Nurse Adeyemi, I read your health education article and would like to inquire about nursing care.')}`}
+                  href={`https://wa.me/${DHERM_HEALTH_INFO.whatsappNumber}?text=${encodeURIComponent('Hello Nurse Emmanuel Damilola Mary, I read your health education article and would like to inquire about nursing care.')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-whatsapp"

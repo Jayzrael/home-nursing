@@ -15,7 +15,7 @@ const steps = [
   {
     number: '02',
     title: 'Clinical Assessment & Triage',
-    desc: 'Nurse Adeyemi reviews medical history, current prescriptions, and specific care goals to prepare a customized bedside plan.',
+    desc: 'Nurse Emmanuel Damilola Mary reviews medical history, current prescriptions, and specific care goals to prepare a customized bedside plan.',
     icon: <ClipboardCheck size={28} />,
   },
   {
@@ -36,7 +36,7 @@ export function HowItWorks({ onOpenBooking }: HowItWorksProps) {
   return (
     <section className="section-py how-it-works-section">
       <div className="container">
-        
+
         <div className="section-header-center">
           <div className="section-badge">
             <Sparkles size={14} className="gold-accent-icon" />
@@ -86,7 +86,7 @@ export function HowItWorks({ onOpenBooking }: HowItWorksProps) {
             ))}
           </div>
           <p className="plans-note">
-            * Direct and transparent service scheduling. Secure online payment ready (Paystack/Flutterwave) or payment on visit.
+            * Direct and transparent service scheduling. Secure online payment ready or payment on visit.
           </p>
         </div>
 

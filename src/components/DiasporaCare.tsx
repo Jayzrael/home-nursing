@@ -15,7 +15,7 @@ export function DiasporaCare({ onOpenBooking }: DiasporaCareProps) {
     {
       icon: <MessageSquare size={22} />,
       title: 'Direct WhatsApp Reports',
-      desc: 'Receive post-visit clinical summaries, vital sign trends (BP, glucose), medication adherence logs, and recovery notes directly from Nurse Adeyemi.'
+      desc: 'Receive post-visit clinical summaries, vital sign trends (BP, glucose), medication adherence logs, and recovery notes directly from Nurse Emmanuel Damilola Mary.'
     },
     {
       icon: <ShieldCheck size={22} />,
@@ -33,13 +33,13 @@ export function DiasporaCare({ onOpenBooking }: DiasporaCareProps) {
     <section className="section-py diaspora-section">
       <div className="container">
         <div className="diaspora-grid">
-          
+
           {/* Left Column */}
           <div className="diaspora-content-col">
             <div className="diaspora-badge">
               <Globe size={14} /> Diaspora & Remote Family Support
             </div>
-            
+
             <h2 className="diaspora-title">
               Caring for Your Loved Ones from Abroad? <br />
               <span className="highlight-text">Book & Monitor Care Seamlessly.</span>
@@ -64,7 +64,7 @@ export function DiasporaCare({ onOpenBooking }: DiasporaCareProps) {
                 Book Care for Family
               </button>
               <a
-                href={`https://wa.me/${DHERM_HEALTH_INFO.whatsappNumber}?text=${encodeURIComponent('Hello Nurse Adeyemi Damilola Mary! I am inquiring from abroad about arranging home nursing care for a family member.')}`}
+                href={`https://wa.me/${DHERM_HEALTH_INFO.whatsappNumber}?text=${encodeURIComponent('Hello Nurse Emmanuel Damilola Mary! I am inquiring from abroad about arranging home nursing care for a family member.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline btn-lg diaspora-whatsapp-btn"
@@ -79,12 +79,12 @@ export function DiasporaCare({ onOpenBooking }: DiasporaCareProps) {
             <div className="diaspora-vector-frame">
               <svg viewBox="0 0 360 320" className="diaspora-svg" aria-label="Vector illustration of remote family care coordination">
                 <rect x="10" y="10" width="340" height="300" rx="24" fill="#03522B" stroke="#D4AF37" strokeWidth="2" />
-                
+
                 {/* Globe & Connection Lines */}
                 <circle cx="180" cy="140" r="70" fill="#046A38" stroke="#D4AF37" strokeWidth="1.5" />
                 <ellipse cx="180" cy="140" rx="70" ry="25" fill="none" stroke="#D4AF37" strokeWidth="1" strokeDasharray="3,3" opacity="0.7" />
                 <line x1="180" y1="70" x2="180" y2="210" stroke="#D4AF37" strokeWidth="1" strokeDasharray="3,3" opacity="0.7" />
-                
+
                 {/* Location Pulse Points */}
                 <circle cx="140" cy="120" r="6" fill="#F5D77F" className="pulse-dot-glow" />
                 <circle cx="210" cy="155" r="6" fill="#F5D77F" className="pulse-dot-glow" />

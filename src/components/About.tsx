@@ -1,13 +1,13 @@
-import { 
-  ShieldCheck, 
-  Heart, 
-  Baby, 
-  Activity, 
-  Bandage, 
-  BookOpen, 
-  Shield, 
-  Phone, 
-  Calendar, 
+import {
+  ShieldCheck,
+  Heart,
+  Baby,
+  Activity,
+  Bandage,
+  BookOpen,
+  Shield,
+  Phone,
+  Calendar,
   CheckCircle2,
   Sparkles
 } from 'lucide-react';
@@ -49,13 +49,13 @@ export function About({ onOpenBooking }: AboutProps) {
   return (
     <section id="about" className="section-py about-section">
       <div className="container">
-        
+
         <div className="about-grid">
-          
+
           {/* Left Column: 2D Illustrated Caregiver Emblem & Accreditation Card */}
           <div className="about-visual-col">
             <div className="about-graphic-card">
-              
+
               {/* Abstract 2D Vector Caregiver with Pulsing Gold Heart Aura */}
               <div className="about-svg-wrap">
                 <svg viewBox="0 0 400 380" className="about-care-svg" aria-label="Flat 2D vector caregiver graphic with glowing medical insignia">
@@ -79,11 +79,11 @@ export function About({ onOpenBooking }: AboutProps) {
                   <circle cx="200" cy="180" r="140" fill="url(#goldPulse)" className="pulse-aura-anim" />
 
                   {/* Shield Frame */}
-                  <path 
-                    d="M200 40 L310 90 L310 220 C310 290 200 340 200 340 C200 340 90 290 90 220 L90 90 Z" 
-                    fill="url(#shieldGrad)" 
-                    stroke="#046A38" 
-                    strokeWidth="3" 
+                  <path
+                    d="M200 40 L310 90 L310 220 C310 290 200 340 200 340 C200 340 90 290 90 220 L90 90 Z"
+                    fill="url(#shieldGrad)"
+                    stroke="#046A38"
+                    strokeWidth="3"
                   />
 
                   {/* Stylized Nurse Silhouette in Emerald */}
@@ -111,7 +111,7 @@ export function About({ onOpenBooking }: AboutProps) {
               <div className="about-credentials-pill">
                 <ShieldCheck size={20} className="emerald-accent-icon" />
                 <div>
-                  <div className="cred-title">Adeyemi Damilola Mary</div>
+                  <div className="cred-title">Emmanuel Damilola Mary</div>
                   <div className="cred-sub">Registered Nurse & Midwife</div>
                 </div>
               </div>
@@ -143,7 +143,7 @@ export function About({ onOpenBooking }: AboutProps) {
             </div>
 
             <h2 className="section-title">
-              Adeyemi Damilola Mary <span className="qualifications-tag">(RN, RM, BLS, BNSc)</span>
+              Emmanuel Damilola Mary <span className="qualifications-tag">(RN, RM, BLS, BNSc)</span>
             </h2>
 
             <p className="about-lead">
@@ -197,7 +197,7 @@ export function About({ onOpenBooking }: AboutProps) {
                 rel="noopener noreferrer"
                 className="btn btn-outline"
               >
-                <Phone size={16} /> Speak with Nurse Adeyemi
+                <Phone size={16} /> Speak with Nurse Emmanuel Damilola Mary
               </a>
             </div>
 

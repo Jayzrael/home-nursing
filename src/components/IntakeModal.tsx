@@ -39,7 +39,7 @@ export function IntakeModal({ onClose }: IntakeModalProps) {
             <div className="section-badge" style={{ marginBottom: '0.75rem' }}>Secure Patient Intake</div>
             <h2 className="modal-title">Patient Medical Intake Form</h2>
             <p className="modal-subtitle">
-              Please provide accurate health background so Nurse Adeyemi can review clinical history and structure an individualized care plan. Your details are strictly confidential.
+              Please provide accurate health background so Nurse Emmanuel Damilola Mary can review clinical history and structure an individualized care plan. Your details are strictly confidential.
             </p>
 
             <form onSubmit={handleSubmit}>
@@ -117,12 +117,12 @@ export function IntakeModal({ onClose }: IntakeModalProps) {
             <div className="form-success-icon"><CheckCircle size={36} /></div>
             <h3 className="form-success-title">Patient Intake Submitted!</h3>
             <p className="form-success-text">
-              Thank you for submitting clinical intake for <strong>{form.patientName}</strong>. Nurse Adeyemi will review these details and reach out to <strong>{form.phone}</strong> to confirm your tailored care schedule.
+              Thank you for submitting clinical intake for <strong>{form.patientName}</strong>. Nurse Emmanuel Damilola Mary will review these details and reach out to <strong>{form.phone}</strong> to confirm your tailored care schedule.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <button className="btn btn-primary" onClick={onClose}>Done</button>
               <a
-                href={`https://wa.me/${DHERM_HEALTH_INFO.whatsappNumber}?text=${encodeURIComponent(`Hello Nurse Adeyemi, I just submitted a patient medical intake form for ${form.patientName}. Please confirm receipt.`)}`}
+                href={`https://wa.me/${DHERM_HEALTH_INFO.whatsappNumber}?text=${encodeURIComponent(`Hello Nurse Emmanuel Damilola Mary, I just submitted a patient medical intake form for ${form.patientName}. Please confirm receipt.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-whatsapp"

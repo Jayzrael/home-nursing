@@ -21,7 +21,7 @@ export function LegalModals({ activeModal, onClose }: LegalModalsProps) {
 
             <h3>1. Who We Are</h3>
             <p>
-              <strong>DhermHealthConnect</strong> is a licensed clinical home nursing and virtual health practice led by Nurse Adeyemi Damilola Mary (RN, RM, BLS, BNSc). We are committed to protecting the privacy, dignity, and confidentiality of our patients' health and personal information.
+              <strong>DhermHealthConnect</strong> is a licensed clinical home nursing and virtual health practice led by Nurse Emmanuel Damilola Mary (RN, RM, BLS, BNSc). We are committed to protecting the privacy, dignity, and confidentiality of our patients' health and personal information.
             </p>
 
             <h3>2. Information We Collect</h3>

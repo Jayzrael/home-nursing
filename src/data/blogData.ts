@@ -36,7 +36,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'August 10, 2026',
     readTime: '7 min read',
     author: {
-      name: 'Nurse Adeyemi Damilola Mary',
+      name: 'Nurse Emmanuel Damilola Mary',
       role: 'Registered Nurse & Midwife (RN, RM, BLS, BNSc)',
       avatar: '/images/nurse-bp-check.jpg'
     },

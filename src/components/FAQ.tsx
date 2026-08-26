@@ -4,19 +4,19 @@ import { ChevronDown, ChevronUp, Sparkles } from 'lucide-react';
 const faqs = [
   {
     q: 'How do I book a private home nursing visit or online consultation?',
-    a: 'You can use the 4-step online booking form on this site, call 0706 395 8561, or send a direct WhatsApp message to wa.me/2347063958561. Nurse Adeyemi will confirm scheduling details and tailor an individualized care plan.',
+    a: 'You can use the 4-step online booking form on this site, call 0706 395 8561, or send a direct WhatsApp message to wa.me/2347063958561. Nurse Emmanuel Damilola Mary will confirm scheduling details and tailor an individualized care plan.',
   },
   {
     q: 'What are your professional nursing qualifications?',
-    a: 'Nurse Adeyemi Damilola Mary is a certified Registered Nurse (RN), Registered Midwife (RM), certified in Basic Life Support (BLS), and holds a Bachelor of Nursing Science (BNSc) with comprehensive clinical exposure since 2020 across pediatric, medical-surgical, emergency, and psychiatric nursing.',
+    a: 'Nurse Emmanuel Damilola Mary is a certified Registered Nurse (RN), Registered Midwife (RM), certified in Basic Life Support (BLS), and holds a Bachelor of Nursing Science (BNSc) with comprehensive clinical exposure since 2020 across pediatric, medical-surgical, emergency, and psychiatric nursing.',
   },
   {
     q: 'What 7 core services does DhermHealthConnect offer?',
     a: 'We specialize in: 1) Online nursing consultation, 2) Health education & lifestyle coaching, 3) Blood pressure & diabetes monitoring, 4) Wound care guidance & dressing, 5) Medication education & compliance, 6) Antenatal and postnatal support, and 7) In-home clinical nursing visits.',
   },
   {
-    q: 'Will Nurse Adeyemi personally attend every visit?',
-    a: 'Yes, absolutely. DhermHealthConnect provides guaranteed 1-on-1 care continuity. You work directly with Nurse Adeyemi Damilola Mary every visit, ensuring consistent medical oversight and zero rotation of unfamiliar temp nurses.',
+    q: 'Will Nurse Emmanuel Damilola Mary personally attend every visit?',
+    a: 'Yes, absolutely. DhermHealthConnect provides guaranteed 1-on-1 care continuity. You work directly with Nurse Emmanuel Damilola Mary every visit, ensuring consistent medical oversight and zero rotation of unfamiliar temp nurses.',
   },
   {
     q: 'Can I book an online nursing consultation if I am in another state or abroad?',
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: 'What payment options are available?',
-    a: 'We support flexible payment options: secure debit/credit card payments (Paystack / Flutterwave integration ready), direct bank transfer, or payment on visit. Full digital receipts and care documentation are provided.',
+    a: 'We support flexible payment options: secure debit/credit card payments, direct bank transfer, or payment on visit. Full digital receipts and care documentation are provided.',
   },
   {
     q: 'How are patient records and health privacy protected?',
@@ -42,7 +42,7 @@ export function FAQ() {
   return (
     <section id="faq" className="section-py" style={{ background: 'var(--white)' }}>
       <div className="container">
-        
+
         <div className="section-header-center">
           <div className="section-badge">
             <Sparkles size={14} className="gold-accent-icon" />

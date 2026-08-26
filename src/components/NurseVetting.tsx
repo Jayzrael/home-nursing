@@ -43,7 +43,7 @@ export function NurseVetting() {
     {
       step: '03',
       title: 'Guaranteed 1:1 Continuity',
-      desc: 'You never get a rotating roster of unfamiliar temp staff. Nurse Adeyemi personally handles every scheduled visit.',
+      desc: 'You never get a rotating roster of unfamiliar temp staff. Nurse Emmanuel Damilola Mary personally handles every scheduled visit.',
       color: '#B89324',
       bg: '#FBF5E6',
     },
@@ -52,14 +52,14 @@ export function NurseVetting() {
   return (
     <section className="section-py vetting-section">
       <div className="container">
-        
+
         {/* Header */}
         <div className="section-header-center">
           <div className="section-badge">
             <Sparkles size={14} className="gold-accent-icon" />
             <span>Professional Clinical Credentials</span>
           </div>
-          <h2 className="section-title">Adeyemi Damilola Mary ({DHERM_HEALTH_INFO.nurseQualifications})</h2>
+          <h2 className="section-title">Emmanuel Damilola Mary ({DHERM_HEALTH_INFO.nurseQualifications})</h2>
           <p className="section-subtitle">
             Registered Nurse & Midwife delivering dedicated, compassionate clinical home care and virtual health support.
           </p>
@@ -68,14 +68,14 @@ export function NurseVetting() {
         {/* Solo Nurse Profile Feature Card */}
         <div className="vetting-profile-card">
           <div className="vetting-profile-grid">
-            
+
             {/* 2D Vector Visual Badge */}
             <div className="vetting-photo-col">
               <div className="vetting-vector-frame">
                 <svg viewBox="0 0 280 280" className="vetting-vector-svg" aria-label="Flat 2D vector nurse caregiver emblem">
                   <circle cx="140" cy="140" r="125" fill="#E8F5EE" stroke="#046A38" strokeWidth="3" />
                   <circle cx="140" cy="140" r="105" fill="#FFFFFF" stroke="#D4AF37" strokeWidth="2" strokeDasharray="4,3" />
-                  
+
                   {/* Nurse Silhouette */}
                   <g transform="translate(70, 45)">
                     <circle cx="70" cy="45" r="28" fill="#2D4A3E" />

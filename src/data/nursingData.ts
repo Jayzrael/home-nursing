@@ -15,7 +15,7 @@ export const DHERM_HEALTH_INFO = {
   name: "DHERMHEALTCONNET",
   displayName: "DhermHealthConnect",
   motto: "Bringing Professional Care to Your Doorstep.",
-  nurseName: "Adeyemi Damilola Mary",
+  nurseName: "Emmanuel Damilola Mary",
   nurseQualifications: "RN, RM, BLS, BNSc",
   title: "Registered Nurse & Registered Midwife",
   tagline: "Compassionate, Professional Nursing Care — Wherever You Are.",
@@ -35,7 +35,7 @@ export const DHERM_HEALTH_INFO = {
   phone: "0706 395 8561",
   phoneFormatted: "0706 395 8561",
   whatsappNumber: "2347063958561",
-  whatsappPrefill: "Hello Nurse Adeyemi Damilola Mary! I would like to inquire about booking professional nursing care through DhermHealthConnect.",
+  whatsappPrefill: "Hello Nurse Emmanuel Damilola Mary! I would like to inquire about booking professional nursing care through DhermHealthConnect.",
   email: "akintundeolukunla@gmail.com",
   locations: [
     {
@@ -279,7 +279,7 @@ export const TESTIMONIALS_DATA = [
   },
   {
     id: "test-3",
-    quote: "Managing my father's hypertension and diabetes had become overwhelming until Nurse Adeyemi stepped in with regular BP checks, blood sugar logs, and dietary advice. Highly recommended!",
+    quote: "Managing my father's hypertension and diabetes had become overwhelming until Nurse Emmanuel stepped in with regular BP checks, blood sugar logs, and dietary advice. Highly recommended!",
     author: "Dr. K. Babatunde",
     relationship: "Family Representative",
     location: "Chronic Condition Monitoring",

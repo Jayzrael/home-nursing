@@ -220,7 +220,7 @@ export function App() {
         rel="noopener noreferrer"
         className="whatsapp-fab"
         aria-label="Chat on WhatsApp"
-        title="WhatsApp — Speak with Nurse Adeyemi"
+        title="WhatsApp — Speak with Nurse Emmanuel Damilola Mary"
       >
         <div className="whatsapp-fab-pulse"></div>
         <MessageSquare size={26} />

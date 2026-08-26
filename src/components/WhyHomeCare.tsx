@@ -18,7 +18,7 @@ const rows = [
   },
   {
     factor: 'Family Communication',
-    home: 'Direct WhatsApp and phone reports from Nurse Adeyemi after every visit',
+    home: 'Direct WhatsApp and phone reports from Nurse Emmanuel Damilola Mary after every visit',
     hospital: 'Strict visiting windows; difficult to get immediate physician updates',
   },
   {
@@ -42,7 +42,7 @@ export function WhyHomeCare({ onOpenBooking }: WhyHomeProps) {
   return (
     <section className="section-py why-home-section">
       <div className="container">
-        
+
         <div className="section-header-center">
           <div className="section-badge">
             <Sparkles size={14} className="gold-accent-icon" />
