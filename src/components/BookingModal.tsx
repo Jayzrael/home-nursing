@@ -185,6 +185,15 @@ export function BookingModal({ onClose, initialServiceId }: BookingModalProps) {
         {currentStep === 1 && (
           <div className="wizard-step-content">
             <h4 className="wizard-step-title">1. Choose a Nursing Service</h4>
+
+            {/* Consultation Fee Notice */}
+            <div className="wizard-fee-notice">
+              <span className="wizard-fee-icon">💳</span>
+              <div>
+                <strong>Consultation Fee: ₦5,000</strong>
+                {/* <span> — payable on confirmation of visit.</span> */}
+              </div>
+            </div>
             <div className="service-selection-grid">
               {HOME_NURSING_SERVICES.map(srv => (
                 <div

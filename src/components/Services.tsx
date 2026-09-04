@@ -98,6 +98,10 @@ export function Services({ onOpenBooking }: ServicesProps) {
                 <Clock size={13} /> {service.duration}
               </div>
 
+              <div className="service-fee-tag">
+                <span className="fee-naira">₦5,000</span> consultation fee
+              </div>
+
               <ul className="service-card-features">
                 {service.features.slice(0, 3).map((f, i) => (
                   <li key={i} className="service-feature-item">
@@ -166,7 +170,12 @@ export function Services({ onOpenBooking }: ServicesProps) {
                 </ul>
               </div>
 
-              <div className="modal-actions-row" style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <div className="service-fee-notice">
+                <span className="fee-notice-label">Consultation Fee:</span>
+                <span className="fee-notice-amount">₦5,000</span>
+              </div>
+
+              <div className="modal-actions-row" style={{ marginTop: '1rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <button 
                   className="btn btn-primary" 
                   style={{ flex: 1 }}

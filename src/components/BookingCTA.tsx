@@ -63,6 +63,9 @@ export function BookingCTA({ onOpenBooking, onOpenIntake }: BookingCTAProps) {
             <p className="booking-cta-text">
               Schedule a personalized home visit or virtual consultation directly with <strong>{DHERM_HEALTH_INFO.nurseName}</strong> ({DHERM_HEALTH_INFO.nurseQualifications}). Professional, private, and personal care tailored to your family.
             </p>
+            <p className="booking-cta-fee-line">
+              <span className="cta-fee-badge">₦5,000 Consultation Fee</span> — transparent, no hidden charges.
+            </p>
             
             <div className="booking-cta-actions">
               <button className="btn btn-gold btn-lg" onClick={onOpenBooking}>
